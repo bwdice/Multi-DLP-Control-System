@@ -1130,7 +1130,7 @@ color: rgb(0, 0, 0);</string>
         </rect>
        </property>
        <property name="text">
-        <string>读取</string>
+        <string>读取液位距离</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_liquid_sensor">
