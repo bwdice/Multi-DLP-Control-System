@@ -8,7 +8,7 @@ QT       += core gui network multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Multi-DLP-Control-System-V1.3.7
+TARGET = Multi-DLP-Control-System-V2.0.1
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

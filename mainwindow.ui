@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Mulit_DLP Control System V1.3.7</string>
+   <string>Mulit_DLP Control System V2.0.1</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 253, 237);</string>
@@ -2321,7 +2321,7 @@
         <property name="geometry">
          <rect>
           <x>250</x>
-          <y>105</y>
+          <y>121</y>
           <width>21</width>
           <height>16</height>
          </rect>
@@ -2422,7 +2422,7 @@
         <property name="geometry">
          <rect>
           <x>250</x>
-          <y>180</y>
+          <y>200</y>
           <width>21</width>
           <height>16</height>
          </rect>
