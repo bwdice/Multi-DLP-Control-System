@@ -51,6 +51,8 @@ enum MsgType{
     Msg_DLP_Power_Ctrl,
     Msg_Ret_Error,
     Msg_Delete_SLC_File,
+    Msg_Stop_Test,
+    Msg_Lituit_Auto_Ctrl,
     Msg_Nop
 };
 
@@ -113,6 +115,17 @@ typedef struct DLP_PARA_t
 }DLP_PARA;
 
 
+typedef struct LIQUIT_AUTO_CTRL_t
+{
+    quint32 				is_enable;              // 是否开启自动控制
+    quint32 				posit;                  // 自动控制液位位置
+    quint32                 range;                  // 自动控制范围
+    quint32                 step;                   // 电机步长
+    quint32                 time;                   // 自动控制时间间隔
+}LIQUIT_AUTO_CTRL;
+
+Q_DECLARE_METATYPE(LIQUIT_AUTO_CTRL)
+
 
 typedef struct SYS_PARA_t
 {
@@ -120,6 +133,7 @@ typedef struct SYS_PARA_t
     SLICE_PARA              slice;
     MOTOR_RUN_PARA          motor_run[3];
     MOTOR_PRINT_PARA        motor_print;
+    LIQUIT_AUTO_CTRL        liquit_ctrl;
     DLP_PARA                dlp;
 }SYS_PARA;
 
@@ -214,6 +228,7 @@ public slots:
     void thread_bright_test(void);
     void thread_sharpness_test(void);
     void thread_homogeneity_test(int image_index);
+    void thread_stop_test();
     void thread_motor_ctrl(int channel, int direct, int step);
     void thread_motor_reset(int channel);
     void thread_get_liquid_sensor();
@@ -225,6 +240,7 @@ public slots:
     void thread_set_motor_para(int index, int current, int subdivision, int start_speed, int speed_up_time, int speed_down_time, int max_speed, int return_speed, int speed_after_zero, int return_up_down_time);
     void thread_open_slc_file(QString filename);
     void thread_delete_slc_file(QString filename);
+    void thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time);
 
 private:
     //public

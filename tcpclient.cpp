@@ -340,6 +340,20 @@ void TcpClient::Tcp_System_Para_Process()
         index += 2;
     }
 
+
+    memcpy(&para.liquit_ctrl.is_enable, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
+    memcpy(&para.liquit_ctrl.posit, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
+    memcpy(&para.liquit_ctrl.range, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
+    memcpy(&para.liquit_ctrl.step, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
+    memcpy(&para.liquit_ctrl.time, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
+
+
+
     memcpy(&para.dlp.dlp1_current, m_pTcpRecvFrame->pack_data+index, 4);
     index += 4;
     memcpy(&para.dlp.dlp2_current, m_pTcpRecvFrame->pack_data+index, 4);
@@ -636,6 +650,11 @@ void TcpClient::thread_homogeneity_test(int image_index)
     Tcp_Send_Cmd(Msg_Homogeneity_Test_After_Connect, buff, 4);
 }
 
+void TcpClient::thread_stop_test()
+{
+    Tcp_Send_Cmd(Msg_Stop_Test, nullptr, 0);
+}
+
 
 void TcpClient::thread_motor_ctrl(int channel, int direct, int step)
 {
@@ -663,6 +682,19 @@ void TcpClient::thread_motor_reset(int channel)
 void TcpClient::thread_get_liquid_sensor()
 {
     Tcp_Send_Cmd(Msg_Get_Liquid_Sensor_Data, nullptr, 0);
+}
+
+void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time)
+{
+    quint8 buff[100];
+
+    memcpy((void *)(buff), (void *)(&is_check), 4);
+    memcpy((void *)(buff+4), (void *)(&posit), 4);
+    memcpy((void *)(buff+8), (void *)(&range), 4);
+    memcpy((void *)(buff+12), (void *)(&step), 4);
+    memcpy((void *)(buff+16), (void *)(&time), 4);
+
+    Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 20);
 }
 
 void TcpClient::thread_dlp_current_set(int current1, int current2)

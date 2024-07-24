@@ -80,6 +80,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_motor_speed_after_zero_3->setText("60");
     ui->lineEdit_motor_up_down_time_after_zero_3->setText("100");
 
+    //liquit auto ctrl
+    ui->checkBox_liquit_ctrl_en->setChecked(false);
+    ui->lineEdit_liquit_ctrl_posit->setText("30");
+    ui->lineEdit_liquit_ctrl_range->setText("1");
+    ui->lineEdit_liquit_ctrl_step->setText("500");
+    ui->lineEdit_liquit_ctrl_time->setText("5");
+
     //show gray pic
     ui->lineEdit_show_gray_pic->setText("255");
 
@@ -167,9 +174,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( this, SIGNAL(main_bright_test()), tcpClient, SLOT(thread_bright_test()) );
     connect( this, SIGNAL(main_sharpness_test()), tcpClient, SLOT(thread_sharpness_test()) );
     connect( this, SIGNAL(main_homogeneity_test(int)), tcpClient, SLOT(thread_homogeneity_test(int)) );
+    connect( this, SIGNAL(main_stop_test()), tcpClient, SLOT(thread_stop_test()) );
     connect( this, SIGNAL(main_motor_ctrl(int, int, int)), tcpClient, SLOT(thread_motor_ctrl(int, int, int)) );
     connect( this, SIGNAL(main_motor_reset(int)), tcpClient, SLOT(thread_motor_reset(int)) );
     connect( this, SIGNAL(main_get_liquid_sensor()), tcpClient, SLOT(thread_get_liquid_sensor()) );
+    connect( this, SIGNAL(main_set_liquit_auto_ctrl(int, int, int, int, int)), tcpClient, SLOT(thread_set_liquit_auto_ctrl(int, int, int, int, int)) );
     connect( this, SIGNAL(main_dlp_current_set(int, int)), tcpClient, SLOT(thread_dlp_current_set(int, int)) );
     connect( tcpClient, SIGNAL(thread_get_system_para(SYS_PARA)), this, SLOT(main_get_system_para(SYS_PARA)));
     connect( tcpClient, SIGNAL(thread_liquid_sensor_ret(int, int)), this, SLOT(main_liquid_sensor_ret(int, int)));
@@ -729,6 +738,19 @@ void MainWindow::main_get_system_para(SYS_PARA sys_para)
     ui->lineEdit_motor_speed_after_zero_3->setText(QString("%1").arg(sys_para.motor_run[2].return_speed_after_zero));
     ui->lineEdit_motor_up_down_time_after_zero_3->setText(QString("%1").arg(sys_para.motor_run[2].return_speed_up_down_time));
 
+    if(sys_para.liquit_ctrl.is_enable == 1)
+    {
+        ui->checkBox_liquit_ctrl_en->setChecked(true);
+    }
+    else
+    {
+        ui->checkBox_liquit_ctrl_en->setChecked(false);
+    }
+    ui->lineEdit_liquit_ctrl_posit->setText(QString("%1").arg((double)sys_para.liquit_ctrl.posit/1000));
+    ui->lineEdit_liquit_ctrl_range->setText(QString("%1").arg((double)sys_para.liquit_ctrl.range/1000));
+    ui->lineEdit_liquit_ctrl_step->setText(QString("%1").arg(sys_para.liquit_ctrl.step));
+    ui->lineEdit_liquit_ctrl_time->setText(QString("%1").arg((double)sys_para.liquit_ctrl.time/1000));
+
     ui->lineEdit_led_current->setText(QString("%1").arg((double)sys_para.dlp.dlp1_current/10.0));
     ui->lineEdit_led2_current->setText(QString("%1").arg((double)sys_para.dlp.dlp2_current/10.0));
 
@@ -916,6 +938,11 @@ void MainWindow::on_btn_sharpness_test_clicked()
     emit main_sharpness_test();
 }
 
+void MainWindow::on_btn_stop_test_clicked()
+{
+    emit main_stop_test();
+}
+
 void MainWindow::on_btn_set_led_cnrrent_clicked()
 {
     double lfCurrent1, lfCurrent2;
@@ -1040,6 +1067,22 @@ void MainWindow::on_btn_motor_reset_ctrl_3_clicked()
 void MainWindow::on_btn_get_liquid_sensor_clicked()
 {
     emit main_get_liquid_sensor();
+}
+
+
+void MainWindow::on_btn_set_liquit_ctrl_clicked()
+{
+    int is_check = 0;
+    if(ui->checkBox_liquit_ctrl_en->isChecked())
+    {
+        is_check = 1;
+    }
+    int posit = (int)(ui->lineEdit_liquit_ctrl_posit->text().toDouble()*1000);
+    int range = (int)(ui->lineEdit_liquit_ctrl_range->text().toDouble()*1000);
+    int step = ui->lineEdit_liquit_ctrl_step->text().toInt();
+    int time = (int)(ui->lineEdit_liquit_ctrl_time->text().toDouble()*1000);
+
+    emit main_set_liquit_auto_ctrl(is_check, posit, range, step, time);
 }
 
 

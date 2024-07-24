@@ -76,7 +76,7 @@ public:
     //show image
     QImage              *m_show_image;
 
-    int  z_distance;
+
 
 public:
 
@@ -147,6 +147,10 @@ private slots:
     void on_btn_z_calc_clicked();
 
     void on_btn_stop_print_2_clicked();
+	
+	void on_btn_stop_test_clicked();
+	
+    void on_btn_set_liquit_ctrl_clicked();
 
 signals:
     void main_start_find_device(QString);
@@ -161,6 +165,7 @@ signals:
     void main_bright_test(void);
     void main_sharpness_test(void);
     void main_homogeneity_test(int);
+     void main_stop_test();
     void main_motor_ctrl(int, int, int);
     void main_motor_reset(int);
     void main_get_liquid_sensor(void);
@@ -172,6 +177,7 @@ signals:
     void main_set_motor_para(int, int, int, int, int, int, int, int, int, int);
     void main_open_slc_file(QString);
     void main_delete_slc_file(QString);
+    void main_set_liquit_auto_ctrl(int, int, int, int, int);
 
 private:
     QCamera *camera;
