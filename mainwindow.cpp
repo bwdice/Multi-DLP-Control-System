@@ -34,9 +34,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_model_z->setText("0");
     ui->lineEdit_pixel_size->setText("300");
     ui->lineEdit_model_rate->setText("100");
-    
-
-
 
     ui->comboBox_knife_mode->setStyleSheet("QComboBox{color:rgb(255,0,0);}");
 

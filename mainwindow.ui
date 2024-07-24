@@ -65,10 +65,10 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>60</y>
       <width>1901</width>
-      <height>921</height>
+      <height>771</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -84,10 +84,10 @@
      <widget class="QLabel" name="label_show_pic">
       <property name="geometry">
        <rect>
-        <x>1290</x>
-        <y>5</y>
-        <width>576</width>
-        <height>526</height>
+        <x>1130</x>
+        <y>20</y>
+        <width>350</width>
+        <height>350</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -287,7 +287,7 @@
         <rect>
          <x>105</x>
          <y>40</y>
-         <width>371</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -298,9 +298,9 @@
       <widget class="QPushButton" name="btn_open_device_file">
        <property name="geometry">
         <rect>
-         <x>490</x>
+         <x>470</x>
          <y>40</y>
-         <width>116</width>
+         <width>131</width>
          <height>36</height>
         </rect>
        </property>
@@ -311,9 +311,9 @@
       <widget class="QPushButton" name="btn_delete_device_file">
        <property name="geometry">
         <rect>
-         <x>620</x>
+         <x>610</x>
          <y>40</y>
-         <width>121</width>
+         <width>131</width>
          <height>36</height>
         </rect>
        </property>
@@ -330,6 +330,12 @@
          <height>16</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>当前打开文件：</string>
        </property>
@@ -339,9 +345,9 @@
       <property name="geometry">
        <rect>
         <x>780</x>
-        <y>143</y>
+        <y>140</y>
         <width>331</width>
-        <height>286</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="font">
@@ -356,11 +362,17 @@
       <widget class="QLabel" name="label_15">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>60</y>
+         <x>273</x>
+         <y>62</y>
          <width>21</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>mm</string>
@@ -369,11 +381,17 @@
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>20</x>
          <y>60</y>
-         <width>76</width>
+         <width>141</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>水平最大尺寸：</string>
@@ -382,11 +400,17 @@
       <widget class="QLineEdit" name="lineEdit_pixel_size">
        <property name="geometry">
         <rect>
-         <x>130</x>
-         <y>60</y>
+         <x>173</x>
+         <y>62</y>
          <width>91</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -398,11 +422,17 @@
       <widget class="QLabel" name="label_24">
        <property name="geometry">
         <rect>
-         <x>235</x>
-         <y>120</y>
+         <x>275</x>
+         <y>102</y>
          <width>21</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>%</string>
@@ -411,11 +441,17 @@
       <widget class="QLabel" name="label_23">
        <property name="geometry">
         <rect>
-         <x>45</x>
-         <y>120</y>
-         <width>76</width>
+         <x>60</x>
+         <y>100</y>
+         <width>101</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>缩放比例：</string>
@@ -424,11 +460,17 @@
       <widget class="QLineEdit" name="lineEdit_model_rate">
        <property name="geometry">
         <rect>
-         <x>135</x>
-         <y>120</y>
+         <x>173</x>
+         <y>102</y>
          <width>91</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -440,154 +482,30 @@
       <widget class="QPushButton" name="btn_set_slice">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>200</y>
+         <x>100</x>
+         <y>160</y>
          <width>126</width>
          <height>36</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="btn_stop_print">
-      <property name="geometry">
-       <rect>
-        <x>950</x>
-        <y>570</y>
-        <width>226</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>停止打印</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_continue_print">
-      <property name="geometry">
-       <rect>
-        <x>650</x>
-        <y>570</y>
-        <width>236</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>继续打印</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_start_print">
-      <property name="geometry">
-       <rect>
-        <x>55</x>
-        <y>570</y>
-        <width>216</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>开始打印</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_pause_print">
-      <property name="geometry">
-       <rect>
-        <x>345</x>
-        <y>570</y>
-        <width>236</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>暂停打印</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>660</y>
-        <width>1141</width>
-        <height>206</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>打印状态</string>
-      </property>
-      <widget class="QLabel" name="label_current_state">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>45</y>
-         <width>391</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>当前状态：等待开始打印</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_print_running_time">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>90</y>
-         <width>421</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>打印已用时：</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_print_num">
-       <property name="geometry">
-        <rect>
-         <x>535</x>
-         <y>45</y>
-         <width>521</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_print_leave_time">
-       <property name="geometry">
-        <rect>
-         <x>535</x>
-         <y>85</y>
-         <width>531</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>预计打印剩余时间：</string>
-       </property>
-      </widget>
-      <widget class="QProgressBar" name="progressBar_printing">
-       <property name="geometry">
-        <rect>
-         <x>45</x>
-         <y>145</y>
-         <width>1056</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-      </widget>
-     </widget>
      <widget class="QWidget" name="widget_camera" native="true">
       <property name="geometry">
        <rect>
-        <x>1290</x>
-        <y>550</y>
-        <width>576</width>
-        <height>331</height>
+        <x>1130</x>
+        <y>380</y>
+        <width>350</width>
+        <height>350</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -848,27 +766,20 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="btn_stop_print_2">
-      <property name="geometry">
-       <rect>
-        <x>950</x>
-        <y>630</y>
-        <width>226</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>停止打印并回原点</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>333</y>
+        <y>340</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>mm</string>
@@ -883,6 +794,12 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>mm</string>
       </property>
@@ -895,6 +812,12 @@
         <width>81</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(239, 255, 251);</string>
@@ -910,10 +833,16 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>333</y>
+        <y>340</y>
         <width>81</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(239, 255, 251);</string>
@@ -929,10 +858,16 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>275</y>
+        <y>263</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>X：</string>
@@ -942,10 +877,16 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>333</y>
+        <y>340</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Z：</string>
@@ -960,6 +901,12 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Y：</string>
       </property>
@@ -968,10 +915,16 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>272</y>
+        <y>260</y>
         <width>81</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(239, 255, 251);</string>
@@ -987,10 +940,16 @@
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>272</y>
+        <y>260</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>mm</string>
@@ -999,11 +958,17 @@
      <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>300</y>
+        <x>400</x>
+        <y>310</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>张</string>
@@ -1012,11 +977,17 @@
      <widget class="QLineEdit" name="lineEdit_thinkness">
       <property name="geometry">
        <rect>
-        <x>270</x>
+        <x>310</x>
         <y>272</y>
         <width>81</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(239, 255, 251);</string>
@@ -1034,11 +1005,17 @@
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>230</x>
         <y>272</y>
-        <width>41</width>
+        <width>61</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>层厚：</string>
@@ -1047,11 +1024,17 @@
      <widget class="QLineEdit" name="lineEdit_slice_num">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>301</y>
+        <x>310</x>
+        <y>311</y>
         <width>81</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(239, 255, 251);</string>
@@ -1066,11 +1049,17 @@
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>400</x>
         <y>272</y>
         <width>21</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>mm</string>
@@ -1080,26 +1069,1103 @@
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>303</y>
-        <width>71</width>
-        <height>16</height>
+        <y>305</y>
+        <width>101</width>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>图片数量：</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>390</y>
+        <width>1101</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string> 打印控制</string>
+      </property>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>30</y>
+         <width>661</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>打印状态</string>
+       </property>
+       <widget class="QLabel" name="label_current_state">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>341</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>AcadEref</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>当前状态：等待开始打印</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_print_running_time">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>421</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>AcadEref</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>打印已用时：</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_print_num">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>40</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>新宋体</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_print_leave_time">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>180</y>
+          <width>531</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>AcadEref</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>预计打印剩余时间：</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar_printing">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>240</y>
+          <width>621</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>171</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="btn_start_print">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>新宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>开始打印</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_pause_print">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>161</red>
+                <green>92</green>
+                <blue>170</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>161</red>
+                <green>92</green>
+                <blue>170</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>新宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>暂停打印</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_continue_print">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>85</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>85</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>新宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>继续打印</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_stop_print">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>新宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>停止打印</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_stop_print_2">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>170</red>
+                <green>0</green>
+                <blue>127</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>255</green>
+                <blue>251</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="PlaceholderText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="128">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>新宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>停止打印并回原点</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
      <zorder>groupBox_14</zorder>
      <zorder>groupBox_4</zorder>
      <zorder>groupBox_5</zorder>
-     <zorder>btn_stop_print</zorder>
-     <zorder>btn_continue_print</zorder>
-     <zorder>btn_start_print</zorder>
-     <zorder>btn_pause_print</zorder>
-     <zorder>groupBox_3</zorder>
      <zorder>label_show_pic</zorder>
      <zorder>widget_camera</zorder>
-     <zorder>btn_stop_print_2</zorder>
      <zorder>label_22</zorder>
      <zorder>label_21</zorder>
      <zorder>lineEdit_model_y</zorder>
@@ -1115,6 +2181,7 @@
      <zorder>lineEdit_slice_num</zorder>
      <zorder>label_14</zorder>
      <zorder>label_pic_num</zorder>
+     <zorder>groupBox_15</zorder>
     </widget>
     <widget class="QWidget" name="tab_setting">
      <attribute name="title">
@@ -3049,10 +4116,10 @@ color: rgb(0, 0, 0);</string>
    <widget class="QTextEdit" name="textEdit_message">
     <property name="geometry">
      <rect>
-      <x>1610</x>
+      <x>10</x>
       <y>840</y>
-      <width>471</width>
-      <height>221</height>
+      <width>1901</width>
+      <height>171</height>
      </rect>
     </property>
     <property name="styleSheet">
