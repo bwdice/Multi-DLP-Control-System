@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->lineEdit_IP_addr->setText("192.168.0.5");
 
-    ui->tabWidget->setTabText(2, "调试设置");
+    ui->tabWidget->setTabText(2, "调试设备");
     
     ui->tabWidget->setTabText(1, "参数配置");
     ui->tabWidget->setTabText(0, "模型打印");
@@ -1190,7 +1190,6 @@ void MainWindow::on_btn_stop_print_2_clicked()
         emit main_stop_print();
         Show_Message("控制设备停止打印 刮刀回原点......");
         emit main_motor_reset(1);
-        // 这是一个高兴的故事
     }
 
 }
