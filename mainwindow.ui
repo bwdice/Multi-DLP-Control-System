@@ -20,11 +20,17 @@
    <widget class="QPushButton" name="btn_find_device">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>280</x>
       <y>10</y>
-      <width>91</width>
+      <width>101</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>AcadEref</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>连接设备</string>
@@ -48,9 +54,160 @@
      <rect>
       <x>70</x>
       <y>10</y>
-      <width>171</width>
+      <width>191</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="PlaceholderText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="128">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="PlaceholderText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="128">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="PlaceholderText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="128">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>新宋体</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -67,15 +224,21 @@
      <rect>
       <x>10</x>
       <y>60</y>
-      <width>1901</width>
+      <width>1501</width>
       <height>771</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>新宋体</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(239, 255, 251);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_print">
      <attribute name="title">
@@ -105,7 +268,7 @@
        <rect>
         <x>10</x>
         <y>140</y>
-        <width>751</width>
+        <width>781</width>
         <height>231</height>
        </rect>
       </property>
@@ -300,7 +463,7 @@
         <rect>
          <x>470</x>
          <y>40</y>
-         <width>131</width>
+         <width>151</width>
          <height>36</height>
         </rect>
        </property>
@@ -311,9 +474,9 @@
       <widget class="QPushButton" name="btn_delete_device_file">
        <property name="geometry">
         <rect>
-         <x>610</x>
+         <x>630</x>
          <y>40</y>
-         <width>131</width>
+         <width>141</width>
          <height>36</height>
         </rect>
        </property>
@@ -344,9 +507,9 @@
      <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>800</x>
         <y>140</y>
-        <width>331</width>
+        <width>311</width>
         <height>231</height>
        </rect>
       </property>
@@ -1005,7 +1168,7 @@
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>240</x>
         <y>272</y>
         <width>61</width>
         <height>21</height>
@@ -1068,8 +1231,8 @@
      <widget class="QLabel" name="label_pic_num">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>305</y>
+        <x>200</x>
+        <y>310</y>
         <width>101</width>
         <height>21</height>
        </rect>
@@ -1250,7 +1413,7 @@
       <widget class="QGroupBox" name="groupBox_3">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>0</x>
          <y>30</y>
          <width>661</width>
          <height>301</height>
@@ -1358,10 +1521,61 @@
         </property>
        </widget>
       </widget>
+      <widget class="QGroupBox" name="groupBox_11">
+       <property name="geometry">
+        <rect>
+         <x>860</x>
+         <y>30</y>
+         <width>231</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>液位位置读取 </string>
+       </property>
+       <widget class="QPushButton" name="btn_get_liquid_sensor">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>230</y>
+          <width>186</width>
+          <height>46</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>读取液位距离</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_liquid_sensor">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>新宋体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>液位位置：</string>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>670</x>
          <y>40</y>
          <width>171</width>
          <height>291</height>
@@ -1382,15 +1596,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1406,15 +1611,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1429,15 +1625,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1453,15 +1640,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1476,15 +1654,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>120</red>
-                <green>120</green>
-                <blue>120</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1500,15 +1669,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
                </color>
               </brush>
              </colorrole>
@@ -1540,15 +1700,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>161</red>
-                <green>92</green>
-                <blue>170</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1564,15 +1715,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1587,15 +1729,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>161</red>
-                <green>92</green>
-                <blue>170</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1611,15 +1744,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1634,15 +1758,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>120</red>
-                <green>120</green>
-                <blue>120</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1658,15 +1773,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
                </color>
               </brush>
              </colorrole>
@@ -1698,15 +1804,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>85</green>
-                <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1722,15 +1819,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1745,15 +1833,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>85</green>
-                <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1769,15 +1848,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1792,15 +1862,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>120</red>
-                <green>120</green>
-                <blue>120</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1816,15 +1877,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
                </color>
               </brush>
              </colorrole>
@@ -1856,15 +1908,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>255</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1880,15 +1923,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1903,15 +1937,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>255</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1927,15 +1952,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -1950,15 +1966,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>120</red>
-                <green>120</green>
-                <blue>120</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1974,15 +1981,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
                </color>
               </brush>
              </colorrole>
@@ -2014,15 +2012,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -2038,15 +2027,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -2061,15 +2041,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -2085,15 +2056,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>170</red>
-                <green>0</green>
-                <blue>127</blue>
                </color>
               </brush>
              </colorrole>
@@ -2108,15 +2070,6 @@
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Text">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>120</red>
-                <green>120</green>
-                <blue>120</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Base">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -2132,15 +2085,6 @@
                 <red>239</red>
                 <green>255</green>
                 <blue>251</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="PlaceholderText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="128">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
                </color>
               </brush>
              </colorrole>
@@ -2190,23 +2134,180 @@
      <widget class="QGroupBox" name="groupBox_7">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>40</y>
-        <width>911</width>
-        <height>231</height>
+        <x>10</x>
+        <y>10</y>
+        <width>711</width>
+        <height>221</height>
        </rect>
       </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="title">
-       <string>电机运动控制</string>
+       <string>1、电机运动控制</string>
       </property>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>45</y>
-         <width>81</width>
+         <x>20</x>
+         <y>70</y>
+         <width>111</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机1(Z轴)：</string>
@@ -2217,9 +2318,160 @@
         <rect>
          <x>165</x>
          <y>20</y>
-         <width>51</width>
-         <height>16</height>
+         <width>71</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>方向</string>
@@ -2229,10 +2481,16 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>45</y>
+         <y>60</y>
          <width>86</width>
-         <height>22</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
@@ -2255,8 +2513,159 @@ color: rgb(0, 0, 0);</string>
          <x>285</x>
          <y>20</y>
          <width>51</width>
-         <height>16</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>85</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="128">
+             <red>0</red>
+             <green>85</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>85</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="128">
+             <red>0</red>
+             <green>85</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>239</red>
+             <green>255</green>
+             <blue>251</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="128">
+             <red>85</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>步长</string>
@@ -2266,10 +2675,161 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>255</x>
-         <y>45</y>
+         <y>60</y>
          <width>106</width>
-         <height>20</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2281,11 +2841,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_ctrl">
        <property name="geometry">
         <rect>
-         <x>425</x>
-         <y>40</y>
+         <x>375</x>
+         <y>60</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -2294,11 +2860,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_35">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>10</x>
          <y>120</y>
-         <width>81</width>
+         <width>121</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机2(刮刀)：</string>
@@ -2307,11 +2879,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_36">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>185</y>
-         <width>81</width>
+         <x>10</x>
+         <y>177</y>
+         <width>121</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机3(液位)：</string>
@@ -2323,8 +2901,14 @@ color: rgb(0, 0, 0);</string>
          <x>150</x>
          <y>115</y>
          <width>86</width>
-         <height>22</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
@@ -2345,10 +2929,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>180</y>
+         <y>170</y>
          <width>86</width>
-         <height>22</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
@@ -2371,8 +2961,159 @@ color: rgb(0, 0, 0);</string>
          <x>255</x>
          <y>115</y>
          <width>106</width>
-         <height>20</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>0</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>0</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>0</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2385,10 +3126,161 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>255</x>
-         <y>180</y>
+         <y>170</y>
          <width>106</width>
-         <height>20</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="NoBrush">
+            <color alpha="128">
+             <red>170</red>
+             <green>85</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2400,11 +3292,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_ctrl_2">
        <property name="geometry">
         <rect>
-         <x>425</x>
-         <y>110</y>
+         <x>375</x>
+         <y>116</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -2413,11 +3311,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_ctrl_3">
        <property name="geometry">
         <rect>
-         <x>425</x>
-         <y>175</y>
+         <x>375</x>
+         <y>170</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -2426,11 +3330,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_reset_ctrl">
        <property name="geometry">
         <rect>
-         <x>590</x>
-         <y>40</y>
+         <x>500</x>
+         <y>60</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>复位</string>
@@ -2439,11 +3349,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_reset_ctrl_2">
        <property name="geometry">
         <rect>
-         <x>590</x>
-         <y>110</y>
+         <x>500</x>
+         <y>116</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>复位</string>
@@ -2452,37 +3368,36 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_reset_ctrl_3">
        <property name="geometry">
         <rect>
-         <x>590</x>
-         <y>175</y>
+         <x>500</x>
+         <y>170</y>
          <width>101</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>复位</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_40">
-       <property name="geometry">
-        <rect>
-         <x>720</x>
-         <y>20</y>
-         <width>51</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>距离mm</string>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="lineEdit_motor_z_distance">
        <property name="geometry">
         <rect>
-         <x>700</x>
-         <y>40</y>
+         <x>620</x>
+         <y>60</y>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2494,67 +3409,90 @@ color: rgb(0, 0, 0);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QPushButton" name="btn_z_calc">
+      <widget class="QLabel" name="label_40">
        <property name="geometry">
         <rect>
-         <x>790</x>
-         <y>40</y>
-         <width>80</width>
+         <x>630</x>
+         <y>15</y>
+         <width>71</width>
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>计算</string>
+        <string>距离mm</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_11">
-      <property name="geometry">
-       <rect>
-        <x>95</x>
-        <y>40</y>
-        <width>391</width>
-        <height>231</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>液位位置读取 </string>
-      </property>
-      <widget class="QPushButton" name="btn_get_liquid_sensor">
+      <widget class="QLineEdit" name="lineEdit_motor_guadao_distance">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>186</width>
-         <height>46</height>
+         <x>620</x>
+         <y>116</y>
+         <width>81</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
        <property name="text">
-        <string>读取液位距离指令</string>
+        <string>5</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_liquid_sensor">
+      <widget class="QLineEdit" name="lineEdit_motor_liupid_distance">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>120</y>
-         <width>201</width>
-         <height>16</height>
+         <x>620</x>
+         <y>170</y>
+         <width>81</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
        <property name="text">
-        <string>液位位置：</string>
+        <string>5</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_13">
       <property name="geometry">
        <rect>
-        <x>95</x>
-        <y>330</y>
-        <width>396</width>
-        <height>461</height>
+        <x>10</x>
+        <y>240</y>
+        <width>291</width>
+        <height>361</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>AcadEref</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>打印电机运动参数</string>
@@ -2562,11 +3500,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_29">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>70</y>
-         <width>66</width>
+         <x>43</x>
+         <y>71</y>
+         <width>91</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>Z轴步长：</string>
@@ -2575,11 +3519,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>190</y>
-         <width>66</width>
+         <x>31</x>
+         <y>203</y>
+         <width>91</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>刮刀步长：</string>
@@ -2588,11 +3538,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_step_z">
        <property name="geometry">
         <rect>
-         <x>185</x>
-         <y>65</y>
-         <width>106</width>
-         <height>21</height>
+         <x>140</x>
+         <y>66</y>
+         <width>121</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="toolTip">
         <string comment="单个层厚所需要步长" extracomment="单个层厚所需要步长"/>
@@ -2610,11 +3566,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_step_knife">
        <property name="geometry">
         <rect>
-         <x>185</x>
-         <y>185</y>
-         <width>106</width>
-         <height>20</height>
+         <x>140</x>
+         <y>200</y>
+         <width>121</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2626,11 +3588,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_print_motor_para">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>330</y>
+         <x>60</x>
+         <y>300</y>
          <width>166</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -2639,11 +3607,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_42">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>230</y>
-         <width>86</width>
+         <x>30</x>
+         <y>250</y>
+         <width>101</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>刮刀模式：</string>
@@ -2652,11 +3626,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QComboBox" name="comboBox_knife_mode">
        <property name="geometry">
         <rect>
-         <x>185</x>
-         <y>225</y>
-         <width>101</width>
+         <x>140</x>
+         <y>244</y>
+         <width>121</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="currentIndex">
         <number>0</number>
@@ -2675,11 +3655,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_33">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>110</y>
-         <width>66</width>
+         <x>40</x>
+         <y>117</y>
+         <width>91</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>Z轴往返：</string>
@@ -2688,11 +3674,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_z_return">
        <property name="geometry">
         <rect>
-         <x>185</x>
-         <y>105</y>
-         <width>106</width>
-         <height>20</height>
+         <x>140</x>
+         <y>113</y>
+         <width>121</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2704,11 +3696,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_34">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>150</y>
-         <width>66</width>
+         <x>22</x>
+         <y>160</y>
+         <width>111</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>Z轴起始点：</string>
@@ -2717,11 +3715,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_z_start">
        <property name="geometry">
         <rect>
-         <x>185</x>
-         <y>145</y>
-         <width>106</width>
-         <height>20</height>
+         <x>140</x>
+         <y>157</y>
+         <width>121</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2730,15 +3734,40 @@ color: rgb(0, 0, 0);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
+      <widget class="QPushButton" name="btn_z_calc">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>计算Z轴步长</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>335</y>
-        <width>416</width>
-        <height>451</height>
+        <x>420</x>
+        <y>240</y>
+        <width>301</width>
+        <height>361</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>AcadEref</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>时间设置</string>
@@ -2746,11 +3775,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_set_print_time">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>315</y>
+         <x>60</x>
+         <y>300</y>
          <width>196</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -2759,11 +3794,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
-         <x>65</x>
-         <y>50</y>
-         <width>81</width>
+         <x>50</x>
+         <y>35</y>
+         <width>101</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>停止时间：</string>
@@ -2772,11 +3813,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>65</x>
-         <y>225</y>
-         <width>86</width>
+         <x>10</x>
+         <y>160</y>
+         <width>131</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>其它曝光时间：</string>
@@ -2785,11 +3832,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>315</x>
-         <y>50</y>
+         <x>250</x>
+         <y>34</y>
          <width>21</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>秒</string>
@@ -2798,11 +3851,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_stop_time">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>50</y>
+         <x>150</x>
+         <y>30</y>
          <width>86</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2814,11 +3873,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_print_time_other">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>220</y>
+         <x>150</x>
+         <y>150</y>
          <width>86</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2830,11 +3895,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
-         <x>315</x>
-         <y>170</y>
+         <x>250</x>
+         <y>114</y>
          <width>21</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>秒</string>
@@ -2843,11 +3914,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_27">
        <property name="geometry">
         <rect>
-         <x>65</x>
-         <y>110</y>
-         <width>81</width>
+         <x>50</x>
+         <y>75</y>
+         <width>91</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>底层层数：</string>
@@ -2856,11 +3933,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_bottom_layer_num">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>110</y>
+         <x>150</x>
+         <y>70</y>
          <width>86</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2872,11 +3955,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_37">
        <property name="geometry">
         <rect>
-         <x>315</x>
-         <y>115</y>
+         <x>250</x>
+         <y>73</y>
          <width>21</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>层</string>
@@ -2885,11 +3974,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_38">
        <property name="geometry">
         <rect>
-         <x>65</x>
-         <y>165</y>
-         <width>91</width>
+         <x>10</x>
+         <y>115</y>
+         <width>131</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>底层曝光时间：</string>
@@ -2898,11 +3993,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_print_time_bottom">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>165</y>
+         <x>150</x>
+         <y>110</y>
          <width>86</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2914,11 +4015,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_39">
        <property name="geometry">
         <rect>
-         <x>315</x>
-         <y>225</y>
+         <x>250</x>
+         <y>154</y>
          <width>21</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>秒</string>
@@ -2928,11 +4035,17 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_10">
       <property name="geometry">
        <rect>
-        <x>1010</x>
-        <y>330</y>
-        <width>756</width>
-        <height>456</height>
+        <x>730</x>
+        <y>10</y>
+        <width>651</width>
+        <height>591</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>AcadEref</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>电机参数设置</string>
@@ -2940,11 +4053,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_46">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>80</y>
+         <x>110</x>
+         <y>76</y>
          <width>51</width>
-         <height>16</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电流</string>
@@ -2953,11 +4072,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_47">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>110</y>
+         <x>110</x>
+         <y>122</y>
          <width>51</width>
-         <height>16</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>细分</string>
@@ -2967,10 +4092,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>145</y>
-         <width>51</width>
-         <height>16</height>
+         <y>173</y>
+         <width>91</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>起始速度</string>
@@ -2980,10 +4111,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>180</y>
-         <width>51</width>
-         <height>16</height>
+         <y>220</y>
+         <width>91</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>加速时间</string>
@@ -2993,10 +4130,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>215</y>
-         <width>51</width>
-         <height>16</height>
+         <y>270</y>
+         <width>91</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>减速时间</string>
@@ -3006,10 +4149,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>250</y>
-         <width>51</width>
-         <height>16</height>
+         <y>320</y>
+         <width>91</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>最大速度</string>
@@ -3018,11 +4167,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_current_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>75</y>
+         <x>170</x>
+         <y>80</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3034,11 +4189,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_43">
        <property name="geometry">
         <rect>
-         <x>175</x>
+         <x>170</x>
          <y>40</y>
-         <width>81</width>
-         <height>16</height>
+         <width>111</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机1(Z轴)</string>
@@ -3047,11 +4208,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_44">
        <property name="geometry">
         <rect>
-         <x>320</x>
+         <x>310</x>
          <y>40</y>
-         <width>81</width>
-         <height>16</height>
+         <width>111</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机2(刮刀)</string>
@@ -3062,9 +4229,15 @@ color: rgb(0, 0, 0);</string>
         <rect>
          <x>460</x>
          <y>40</y>
-         <width>81</width>
-         <height>16</height>
+         <width>121</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>电机3(液位)</string>
@@ -3073,11 +4246,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_current_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>75</y>
+         <x>310</x>
+         <y>80</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3089,11 +4268,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_current_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>75</y>
+         <x>460</x>
+         <y>80</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3105,11 +4290,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_subdivision_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>110</y>
+         <x>170</x>
+         <y>125</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3121,11 +4312,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_subdivision_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>110</y>
+         <x>310</x>
+         <y>125</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3137,11 +4334,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_subdivision_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>110</y>
+         <x>460</x>
+         <y>125</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3153,11 +4356,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_start_speed_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>145</y>
+         <x>170</x>
+         <y>173</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3169,11 +4378,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_start_speed_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>145</y>
+         <x>309</x>
+         <y>173</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3185,11 +4400,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_start_speed_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>145</y>
+         <x>459</x>
+         <y>173</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3201,11 +4422,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_up_time_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>180</y>
+         <x>170</x>
+         <y>220</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3217,11 +4444,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_up_time_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>180</y>
+         <x>309</x>
+         <y>220</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3233,11 +4466,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_up_time_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>180</y>
+         <x>459</x>
+         <y>220</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3249,11 +4488,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_down_time_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>215</y>
+         <x>170</x>
+         <y>270</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3265,11 +4510,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_down_time_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>215</y>
+         <x>310</x>
+         <y>270</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3281,11 +4532,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_down_time_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>215</y>
+         <x>460</x>
+         <y>270</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3297,11 +4554,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_max_speed_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>250</y>
+         <x>170</x>
+         <y>320</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3313,11 +4576,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_max_speed_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>250</y>
+         <x>310</x>
+         <y>320</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3329,11 +4598,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_max_speed_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>250</y>
+         <x>460</x>
+         <y>320</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3345,11 +4620,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_para_set_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>400</y>
+         <x>165</x>
+         <y>520</y>
          <width>106</width>
-         <height>31</height>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -3358,11 +4639,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_para_set_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>400</y>
+         <x>310</x>
+         <y>520</y>
          <width>106</width>
-         <height>31</height>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -3371,11 +4658,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_motor_para_set_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>400</y>
+         <x>460</x>
+         <y>520</y>
          <width>106</width>
-         <height>31</height>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -3384,11 +4677,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_52">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>150</y>
-         <width>81</width>
-         <height>16</height>
+         <x>584</x>
+         <y>178</y>
+         <width>51</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>r/min</string>
@@ -3397,11 +4696,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_53">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>180</y>
-         <width>81</width>
-         <height>16</height>
+         <x>584</x>
+         <y>220</y>
+         <width>31</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>ms</string>
@@ -3410,11 +4715,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_54">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>215</y>
-         <width>81</width>
-         <height>16</height>
+         <x>590</x>
+         <y>270</y>
+         <width>31</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>ms</string>
@@ -3423,11 +4734,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_55">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>250</y>
-         <width>81</width>
-         <height>16</height>
+         <x>590</x>
+         <y>320</y>
+         <width>51</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>r/min</string>
@@ -3437,10 +4754,16 @@ color: rgb(0, 0, 0);</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>285</y>
-         <width>51</width>
-         <height>16</height>
+         <y>370</y>
+         <width>91</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>返回速度</string>
@@ -3449,11 +4772,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_return_speed_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>285</y>
+         <x>460</x>
+         <y>370</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3465,11 +4794,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_return_speed_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>285</y>
+         <x>310</x>
+         <y>370</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3481,11 +4816,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_return_speed_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>285</y>
+         <x>170</x>
+         <y>370</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3497,11 +4838,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_58">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>320</y>
-         <width>96</width>
-         <height>16</height>
+         <x>10</x>
+         <y>420</y>
+         <width>141</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>找到原点后速度</string>
@@ -3510,11 +4857,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_after_zero_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>320</y>
+         <x>460</x>
+         <y>420</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3526,11 +4879,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_after_zero_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>320</y>
+         <x>169</x>
+         <y>420</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3542,11 +4901,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_speed_after_zero_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>320</y>
+         <x>310</x>
+         <y>420</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3558,11 +4923,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_59">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>360</y>
-         <width>96</width>
-         <height>16</height>
+         <x>10</x>
+         <y>465</y>
+         <width>151</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>返回加减速时间</string>
@@ -3571,11 +4942,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_up_down_time_after_zero_1">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>355</y>
+         <x>170</x>
+         <y>470</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3587,11 +4964,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_up_down_time_after_zero_2">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>355</y>
+         <x>310</x>
+         <y>470</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3603,11 +4986,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_motor_up_down_time_after_zero_3">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>355</y>
+         <x>460</x>
+         <y>470</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3619,11 +5008,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_60">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>285</y>
-         <width>81</width>
-         <height>16</height>
+         <x>590</x>
+         <y>370</y>
+         <width>51</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>r/min</string>
@@ -3632,11 +5027,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_61">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>320</y>
-         <width>81</width>
-         <height>16</height>
+         <x>589</x>
+         <y>410</y>
+         <width>61</width>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>r/min</string>
@@ -3645,14 +5046,58 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_62">
        <property name="geometry">
         <rect>
-         <x>575</x>
-         <y>355</y>
-         <width>81</width>
-         <height>16</height>
+         <x>585</x>
+         <y>470</y>
+         <width>41</width>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>AcadEref</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>ms</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_64">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>80</y>
+         <width>61</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>[0-11]</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_65">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>130</y>
+         <width>61</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>[0-11]</string>
        </property>
       </widget>
      </widget>
@@ -3664,11 +5109,162 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_6">
       <property name="geometry">
        <rect>
-        <x>475</x>
-        <y>45</y>
-        <width>521</width>
-        <height>171</height>
+        <x>270</x>
+        <y>10</y>
+        <width>241</width>
+        <height>191</height>
        </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>光机LED亮度设置</string>
@@ -3676,11 +5272,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>50</y>
-         <width>71</width>
-         <height>16</height>
+         <x>10</x>
+         <y>40</y>
+         <width>101</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>光机1亮度：</string>
@@ -3689,11 +5291,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_led_current">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>50</y>
+         <x>130</x>
+         <y>40</y>
          <width>66</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3705,11 +5313,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_set_led_cnrrent">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>70</y>
+         <x>30</x>
+         <y>140</y>
          <width>136</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>设置</string>
@@ -3718,11 +5332,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_25">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>115</y>
-         <width>71</width>
+         <x>10</x>
+         <y>100</y>
+         <width>111</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>光机2亮度：</string>
@@ -3731,11 +5351,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_led2_current">
        <property name="geometry">
         <rect>
-         <x>155</x>
-         <y>110</y>
+         <x>130</x>
+         <y>92</y>
          <width>66</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3747,11 +5373,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>50</y>
+         <x>207</x>
+         <y>46</y>
          <width>16</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>%</string>
@@ -3760,11 +5392,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_31">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>110</y>
+         <x>207</x>
+         <y>98</y>
          <width>16</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>%</string>
@@ -3774,11 +5412,162 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_8">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>235</y>
-        <width>401</width>
-        <height>166</height>
+        <x>10</x>
+        <y>170</y>
+        <width>241</width>
+        <height>131</height>
        </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>拼接测试</string>
@@ -3786,11 +5575,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_26">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>50</y>
-         <width>61</width>
+         <x>20</x>
+         <y>40</y>
+         <width>91</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>测试图片：</string>
@@ -3799,11 +5594,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QComboBox" name="comboBox_homogeneity_test">
        <property name="geometry">
         <rect>
-         <x>175</x>
-         <y>45</y>
+         <x>120</x>
+         <y>30</y>
          <width>96</width>
-         <height>22</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
@@ -3863,11 +5664,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_homogeneity_test">
        <property name="geometry">
         <rect>
-         <x>85</x>
-         <y>100</y>
+         <x>20</x>
+         <y>70</y>
          <width>201</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>测试拼接均匀性</string>
@@ -3877,11 +5684,162 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>45</y>
-        <width>396</width>
-        <height>166</height>
+        <x>10</x>
+        <y>13</y>
+        <width>241</width>
+        <height>141</height>
        </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>拼接设置</string>
@@ -3889,11 +5847,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_show_grating">
        <property name="geometry">
         <rect>
-         <x>85</x>
-         <y>100</y>
+         <x>30</x>
+         <y>90</y>
          <width>196</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>显示拼接网格</string>
@@ -3902,11 +5866,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_10">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>45</y>
-         <width>61</width>
-         <height>16</height>
+         <x>20</x>
+         <y>40</y>
+         <width>91</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>拼接像素：</string>
@@ -3915,11 +5885,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_connect_pixel">
        <property name="geometry">
         <rect>
-         <x>175</x>
-         <y>45</y>
+         <x>120</x>
+         <y>44</y>
          <width>106</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -3932,11 +5908,162 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_9">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>440</y>
-        <width>401</width>
+        <x>10</x>
+        <y>320</y>
+        <width>241</width>
         <height>161</height>
        </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>255</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>255</red>
+            <green>85</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>光机测试</string>
@@ -3944,11 +6071,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_brightness_test">
        <property name="geometry">
         <rect>
-         <x>95</x>
-         <y>30</y>
+         <x>20</x>
+         <y>40</y>
          <width>191</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>显示亮度测试图片</string>
@@ -3957,11 +6090,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_sharpness_test">
        <property name="geometry">
         <rect>
-         <x>95</x>
-         <y>90</y>
+         <x>20</x>
+         <y>110</y>
          <width>191</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>显示清晰度图片</string>
@@ -3971,11 +6110,162 @@ color: rgb(0, 0, 0);</string>
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>255</y>
-        <width>326</width>
-        <height>246</height>
+        <x>270</x>
+        <y>280</y>
+        <width>251</width>
+        <height>201</height>
        </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>85</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>85</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>85</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>85</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>239</red>
+            <green>255</green>
+            <blue>251</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="title">
        <string>灰度图像显示</string>
@@ -3983,11 +6273,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>40</x>
          <y>40</y>
-         <width>51</width>
+         <width>81</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>灰度值：</string>
@@ -3996,11 +6292,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="lineEdit_show_gray_pic">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>40</y>
+         <x>130</x>
+         <y>36</y>
          <width>61</width>
-         <height>20</height>
+         <height>26</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -4009,11 +6311,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_show_gray_pic">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>155</y>
+         <x>50</x>
+         <y>140</y>
          <width>166</width>
          <height>41</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>显示图片</string>
@@ -4022,11 +6330,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_gray_add">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>90</y>
+         <x>170</x>
+         <y>91</y>
          <width>46</width>
          <height>23</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>+1</string>
@@ -4035,11 +6349,17 @@ color: rgb(0, 0, 0);</string>
       <widget class="QPushButton" name="btn_gray_sub">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>80</x>
          <y>90</y>
          <width>46</width>
          <height>23</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>新宋体</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>-1</string>
@@ -4064,11 +6384,17 @@ color: rgb(0, 0, 0);</string>
    <widget class="QPushButton" name="btn_dlp_power_on_off">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>420</x>
       <y>10</y>
-      <width>141</width>
+      <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>AcadEref</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>光机开机</string>
@@ -4077,9 +6403,9 @@ color: rgb(0, 0, 0);</string>
    <widget class="QProgressBar" name="progressBar_dlp_power_on">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>700</x>
       <y>10</y>
-      <width>471</width>
+      <width>441</width>
       <height>31</height>
      </rect>
     </property>
@@ -4103,11 +6429,17 @@ color: rgb(0, 0, 0);</string>
    <widget class="QPushButton" name="btn_dlp_power_off">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>540</x>
       <y>10</y>
       <width>141</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>AcadEref</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>光机关机</string>
@@ -4118,7 +6450,7 @@ color: rgb(0, 0, 0);</string>
      <rect>
       <x>10</x>
       <y>840</y>
-      <width>1901</width>
+      <width>1501</width>
       <height>171</height>
      </rect>
     </property>
