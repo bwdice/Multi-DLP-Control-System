@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# file dir
+build-Multi-DLP Control System-Desktop_Qt_5_12_3_MSVC2015_64bit-Debug/*
+build-Multi-DLP Control System-Desktop_Qt_5_12_3_MSVC2015_64bit-Release/* 
