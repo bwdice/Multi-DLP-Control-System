@@ -146,11 +146,13 @@ private slots:
 
     void on_btn_z_calc_clicked();
 
-    void on_btn_stop_print_2_clicked();
+
 	
 	void on_btn_stop_test_clicked();
 	
     void on_btn_set_liquit_ctrl_clicked();
+
+    void on_comboBox_dlp_light_type_activated(int index);
 
 signals:
     void main_start_find_device(QString);
@@ -169,7 +171,7 @@ signals:
     void main_motor_ctrl(int, int, int);
     void main_motor_reset(int);
     void main_get_liquid_sensor(void);
-    void main_dlp_current_set(int, int);
+    void main_dlp_current_set(int, int, int);
     void main_show_gray_pic(int);
     void main_get_version();
     void main_set_print_motor_para(int, int, int, int, int);

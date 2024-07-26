@@ -112,6 +112,7 @@ typedef struct DLP_PARA_t
 {
     quint32 				dlp1_current;			// dlp1电流
     quint32 				dlp2_current;			// dlp2电流
+    quint32 				light_source_type;		// 光源类型
 }DLP_PARA;
 
 
@@ -232,7 +233,7 @@ public slots:
     void thread_motor_ctrl(int channel, int direct, int step);
     void thread_motor_reset(int channel);
     void thread_get_liquid_sensor();
-    void thread_dlp_current_set(int current1, int current2);
+    void thread_dlp_current_set(int light_type, int current1, int current2);
     void thread_show_gray_pic(int gray);
     void thread_get_version();
     void thread_set_print_motor_para(int motor_step_z, int motor_step_knife, int motor_knife_mode, int motor_z_return, int motor_z_start);

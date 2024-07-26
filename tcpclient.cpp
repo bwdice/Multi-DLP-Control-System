@@ -358,6 +358,8 @@ void TcpClient::Tcp_System_Para_Process()
     index += 4;
     memcpy(&para.dlp.dlp2_current, m_pTcpRecvFrame->pack_data+index, 4);
     index += 4;
+    memcpy(&para.dlp.light_source_type, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
 
     emit thread_get_system_para(para);
     Show_Message(QString("接收到系统参数"));
@@ -697,14 +699,15 @@ void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, 
     Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 20);
 }
 
-void TcpClient::thread_dlp_current_set(int current1, int current2)
+void TcpClient::thread_dlp_current_set(int light_type, int current1, int current2)
 {
     quint8 buff[100];
 
-    memcpy((void *)(buff), (void *)(&current1), 4);
-    memcpy((void *)(buff+4), (void *)(&current2), 4);
+    memcpy((void *)(buff), (void *)(&light_type), 4);
+    memcpy((void *)(buff+4), (void *)(&current1), 4);
+    memcpy((void *)(buff+8), (void *)(&current2), 4);
 
-    Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 8);
+    Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 12);
 }
 
 

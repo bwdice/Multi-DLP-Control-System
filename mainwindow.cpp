@@ -40,9 +40,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //setting
     ui->lineEdit_led_current->setText("80");
     ui->lineEdit_led2_current->setText("80");
-    ui->lineEdit_motor_step->setText("500");
-    ui->lineEdit_motor_step_2->setText("500");
-    ui->lineEdit_motor_step_3->setText("500");
+    ui->lineEdit_motor_step->setText("1600");
+    ui->lineEdit_motor_step_2->setText("1600");
+    ui->lineEdit_motor_step_3->setText("1600");
 
     ui->lineEdit_motor_step_z->setText("100");
     ui->lineEdit_motor_step_knife->setText("1600");
@@ -99,6 +99,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //dlp
     m_dlp_power_on_off = false;
     m_dlp_power_on_time_cnt = 0;
+    ui->lineEdit_led_current->setText("50");
+    ui->lineEdit_led2_current->setText("50");
+    ui->comboBox_dlp_light_type->setCurrentIndex(0);
 
     //print time
     ui->lineEdit_print_time_bottom->setText("3.0");
@@ -179,7 +182,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( this, SIGNAL(main_motor_reset(int)), tcpClient, SLOT(thread_motor_reset(int)) );
     connect( this, SIGNAL(main_get_liquid_sensor()), tcpClient, SLOT(thread_get_liquid_sensor()) );
     connect( this, SIGNAL(main_set_liquit_auto_ctrl(int, int, int, int, int)), tcpClient, SLOT(thread_set_liquit_auto_ctrl(int, int, int, int, int)) );
-    connect( this, SIGNAL(main_dlp_current_set(int, int)), tcpClient, SLOT(thread_dlp_current_set(int, int)) );
+    connect( this, SIGNAL(main_dlp_current_set(int, int, int)), tcpClient, SLOT(thread_dlp_current_set(int, int, int)) );
     connect( tcpClient, SIGNAL(thread_get_system_para(SYS_PARA)), this, SLOT(main_get_system_para(SYS_PARA)));
     connect( tcpClient, SIGNAL(thread_liquid_sensor_ret(int, int)), this, SLOT(main_liquid_sensor_ret(int, int)));
     connect( tcpClient, SIGNAL(thread_motor_reset_ret(int)), this, SLOT(main_motor_reset_ret(int)));
@@ -751,8 +754,19 @@ void MainWindow::main_get_system_para(SYS_PARA sys_para)
     ui->lineEdit_liquit_ctrl_step->setText(QString("%1").arg(sys_para.liquit_ctrl.step));
     ui->lineEdit_liquit_ctrl_time->setText(QString("%1").arg((double)sys_para.liquit_ctrl.time/1000));
 
-    ui->lineEdit_led_current->setText(QString("%1").arg((double)sys_para.dlp.dlp1_current/10.0));
-    ui->lineEdit_led2_current->setText(QString("%1").arg((double)sys_para.dlp.dlp2_current/10.0));
+    if(sys_para.dlp.light_source_type == 0)
+    {
+        ui->comboBox_dlp_light_type->setCurrentIndex(0);
+        ui->lineEdit_led_current->setText(QString("%1").arg(sys_para.dlp.dlp1_current));
+        ui->lineEdit_led2_current->setText(QString("%1").arg(sys_para.dlp.dlp2_current));
+    }
+    else
+    {
+        ui->comboBox_dlp_light_type->setCurrentIndex(1);
+        ui->lineEdit_led_current->setText(QString("%1").arg((double)sys_para.dlp.dlp1_current/10.0));
+        ui->lineEdit_led2_current->setText(QString("%1").arg((double)sys_para.dlp.dlp2_current/10.0));
+    }
+
 
 
     //para
@@ -943,11 +957,30 @@ void MainWindow::on_btn_stop_test_clicked()
     emit main_stop_test();
 }
 
+
+void MainWindow::on_comboBox_dlp_light_type_activated(int index)
+{
+    if(index == 0)
+    {
+        ui->label_dlp1_current_unit->setText("");
+        ui->label_dlp2_current_unit->setText("");
+    }
+    else
+    {
+        ui->label_dlp1_current_unit->setText("%");
+        ui->label_dlp2_current_unit->setText("%");
+    }
+}
+
 void MainWindow::on_btn_set_led_cnrrent_clicked()
 {
     double lfCurrent1, lfCurrent2;
     int current1, current2;
+    int light_type;
     QString str;
+
+
+    light_type = ui->comboBox_dlp_light_type->currentIndex();
 
     bool ok;
     str = ui->lineEdit_led_current->text();
@@ -965,11 +998,20 @@ void MainWindow::on_btn_set_led_cnrrent_clicked()
         return;
     }
 
-    current1 = (int)(lfCurrent1*10);
-    current2 = (int)(lfCurrent2*10);
+    if(light_type == 0) //led
+    {
+        current1 = (int)(lfCurrent1);
+        current2 = (int)(lfCurrent2);
+    }
+    else //laser
+    {
+        current1 = (int)(lfCurrent1*10);
+        current2 = (int)(lfCurrent2*10);
+    }
 
 
-    emit main_dlp_current_set(current1, current2);
+
+    emit main_dlp_current_set(light_type, current1, current2);
 }
 
 
@@ -1223,13 +1265,4 @@ void MainWindow::on_btn_z_calc_clicked()
 
 }
 
-void MainWindow::on_btn_stop_print_2_clicked()
-{
-    if(m_device_printing)
-    {
-        emit main_stop_print();
-        Show_Message("控制设备停止打印 刮刀回原点......");
-        emit main_motor_reset(1);
-    }
 
-}
