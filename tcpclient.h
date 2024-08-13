@@ -1,4 +1,4 @@
-﻿#ifndef TCPCLIENT_H
+#ifndef TCPCLIENT_H
 #define TCPCLIENT_H
 
 #include <stdio.h>
@@ -53,6 +53,8 @@ enum MsgType{
     Msg_Delete_SLC_File,
     Msg_Stop_Test,
     Msg_Lituit_Auto_Ctrl,
+    Msg_Recv_MotoInfo,
+    Msg_Clear_AlarmCode,
     Msg_Nop
 };
 
@@ -213,7 +215,8 @@ signals:
     void thread_slc_model_size(int, int, int, int, int, int);
     void thread_software_version(QString);
     void thread_printing_image(PRINTING_IMAGE);
-
+    void thread_get_motorinfor(unsigned char *pt,unsigned int len);
+    void thread_motor_clearAlarmCode_ret(int);
 
 
 public slots:
@@ -232,6 +235,7 @@ public slots:
     void thread_stop_test();
     void thread_motor_ctrl(int channel, int direct, int step);
     void thread_motor_reset(int channel);
+    void thread_motor_clearAlarmCode(int channel);
     void thread_get_liquid_sensor();
     void thread_dlp_current_set(int light_type, int current1, int current2);
     void thread_show_gray_pic(int gray);

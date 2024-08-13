@@ -3,8 +3,9 @@
 #include <QStyleFactory>
 #include <iostream>
 #include <fstream>
-
-
+#include <qwidget.h>
+#include <QScreen>
+#include <QTextCodec>
 
 //“Fusion”：融合风格，适用于跨平台的应用程序。
 //“Windows”：Windows 风格，与当前操作系统的风格一致。
@@ -22,12 +23,58 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+   // QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
+   // QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     //QApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+#if 1
+   // QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
+   // QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    //这个是Windows平台用来获取屏幕宽度的代码，
+    //因为在qApplication实例初始化之前，QGuiApplication::screens();无法使用。
 
     QApplication a(argc, argv);
+
+    //设置中文字体
+        a.setFont(QFont("Microsoft Yahei", 9));
+#if 0
+        //设置中文编码
+    #if (QT_VERSION <= QT_VERSION_CHECK(5,0,0))
+    #if _MSC_VER
+        QTextCodec *codec = QTextCodec::codecForName("GBK");
+    #else
+        QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    #endif
+        QTextCodec::setCodecForLocale(codec);
+        QTextCodec::setCodecForCStrings(codec);
+        QTextCodec::setCodecForTr(codec);
+    #else
+        QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+        QTextCodec::setCodecForLocale(codec);
+    #endif
+#endif
     a.setStyle(QStyleFactory::create("Fusion"));
+
+
+    // 获取主屏幕
+       QScreen *screen = QGuiApplication::primaryScreen();
+
+       // 获取屏幕的可用尺寸（不包括任务栏等系统元素占用的部分）
+       QRect availableGeometry = screen->availableGeometry();
+
+       int width = availableGeometry.width();
+       int height = availableGeometry.height();
+
+       qDebug() << "屏幕宽度: " << width;
+       qDebug() << "屏幕高度: " << height;
+
+
+
+   // qreal scale = width / height;				// 960 = 1920 / 2
+   // qputenv("QT_SCALE_FACTOR", QString::number(scale).toLatin1());
+
+
+
+
 
     // 设置stdout流为新的文件流
     std::streambuf* originalStdoutBuffer = std::cout.rdbuf();
@@ -47,4 +94,32 @@ int main(int argc, char *argv[])
     newOutput.close();
 
     return ret;
+#else
+
+
+
+        QApplication a(argc, argv);
+        a.setStyle(QStyleFactory::create("Fusion"));
+        Widget w;
+        w.show();
+
+        QGraphicsView* view = new QGraphicsView;
+        QGraphicsScene* scene = new QGraphicsScene();
+        QGraphicsProxyWidget* wt = scene->addWidget(&w);
+        view->setStyleSheet("background:transparent");
+        view->setWindowFlag(Qt::FramelessWindowHint);
+        view->setAttribute(Qt::WA_TranslucentBackground);
+        view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        view->setScene(scene);
+        view->setFocusPolicy(Qt::NoFocus); //防止焦点被View抢走，造成主界面事件失效。
+        view->setFixedSize(800,600);//view->setFixedSize(1920,1080); 调整窗口显示大小，根据要显示的分辨率来。
+        view->scale(800/1280.00,800/1280.00);     //将1280分辨率的窗口进行缩放到分辨率800的窗口上。
+        view->setRenderHints(QPainter::Antialiasing|QPainter::SmoothPixmapTransform);
+        view->move(0,0);
+        view->show();
+
+        return a.exec();
+
+  #endif
 }

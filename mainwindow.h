@@ -9,6 +9,30 @@
 #include "tcpclient.h"
 #include <QImage>
 
+
+#pragma pack(push)
+#pragma pack(1)
+
+typedef struct _Motor_info{
+    unsigned char addr;
+    unsigned char connectfailcnt;
+	int connectflag;
+	int status;
+	int alalrmcode;
+	int speed;
+	int pos;
+	unsigned char  productname[22];
+
+}tMotor_info;
+
+typedef union _UMOTOR_INFO{
+    unsigned char motorinfo_buf[44];
+    tMotor_info  motorinfo;
+}uMotor_Info;
+#pragma pack(pop)
+
+
+
 class QCamera;
 class QCameraViewfinder;
 class QCameraImageCapture;
@@ -29,7 +53,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void timerEvent(QTimerEvent* ev);
-    void closeEvent(QCloseEvent *ev);//澹版槑鍏抽棴绐楀彛浜嬩欢
+    void closeEvent(QCloseEvent *ev);//声明关闭窗口事件
 
     QThread *thread;
     TcpClient *tcpClient;
@@ -39,6 +63,7 @@ public:
     int                 timer_id1;
     int                 timer_id2;
     int                 timer_id3;
+    int                 timer_id4;
 
     //tcp
     bool                m_tcp_connect;
@@ -48,8 +73,8 @@ public:
     int                 m_dlp_power_on_time_cnt;
 
     //File
-    QFile               *m_localFile;     // 瑕佸彂閫佺殑鏂囦欢
-    QString             m_fileName;     // 淇濆瓨鏂囦欢璺緞
+    QFile               *m_localFile;     // 要发送的文件
+    QString             m_fileName;     // 保存文件路径
     bool                m_bOpenFile;
     bool                m_bOpenRK3588File;
 
@@ -76,10 +101,11 @@ public:
     //show image
     QImage              *m_show_image;
 
-
+    uMotor_Info motor_paradata[3];  //电机数据
 
 public:
-
+   void AutoZoomButtonSize();
+   void ResetButtonGeometry(QWidget *widget, double factorx, double factory);
 
 private slots:
     void on_btn_find_device_clicked();
@@ -108,12 +134,13 @@ private slots:
     void main_liquid_sensor_ret(int success, int liquid_sensor);
     void main_motor_ctrl_ret();
     void main_motor_reset_ret(int channel);
+    void main_motor_clearAlarmCode_ret(int channel);
     void main_send_file_persent(int persent);
     void main_slc_file_list_reflash(SLC_FILE_LIST file_list);
     void main_slc_model_size(int status, int x, int y, int z, int thinkness, int slice_num);
     void main_software_version(QString version);
     void main_printing_image(PRINTING_IMAGE image_data);
-
+    void main_get_motorinfor(unsigned char *pt,unsigned int len);
 
 
     void on_btn_homogeneity_test_clicked();
@@ -154,6 +181,22 @@ private slots:
 
     void on_comboBox_dlp_light_type_activated(int index);
 
+    void on_checkBox_priodreadliquitpos_clicked(bool checked);
+
+    void on_Btn_ClearLog_clicked();
+
+    void on_btn_liqut_clearalarmcode_clicked();
+    void on_btn_Z_clearalarmcode_clicked();
+    void on_btn_knife_clearalarmcode_clicked();
+
+    void on_horizontalSlider_led_current_valueChanged(int value);
+
+    void on_lineEdit_led_current_textChanged(const QString &arg1);
+
+    void on_horizontalSlider_led2_current_valueChanged(int value);
+
+    void on_lineEdit_led2_current_textChanged(const QString &arg1);
+
 signals:
     void main_start_find_device(QString);
     void main_file_path(QString);
@@ -180,6 +223,7 @@ signals:
     void main_open_slc_file(QString);
     void main_delete_slc_file(QString);
     void main_set_liquit_auto_ctrl(int, int, int, int, int);
+    void main_motor_clearAlarmCode(int);
 
 private:
     QCamera *camera;
@@ -190,5 +234,8 @@ private:
 private:
     Ui::MainWindow *ui;
 };
+
+
+QString uncharToQstring(unsigned char * id,int len);
 
 #endif // MAINWINDOW_H

@@ -268,12 +268,24 @@ int TcpClient::Tcp_Recv_Process()
             break;
         case Msg_DLP_Power_Ctrl:
             break;
+        case Msg_Recv_MotoInfo:
+            //Show_Message("recv motor data");
+            emit thread_get_motorinfor(m_pTcpRecvFrame->pack_data,132);
+        break;
+        case Msg_Clear_AlarmCode:
+        {
+            uint32_t motor_channel;
+            Show_Message("clear Motor Alarm code");
+            memcpy(&motor_channel, m_pTcpRecvFrame->pack_data, 4);
+            emit thread_motor_clearAlarmCode_ret((int)motor_channel);
+        }
+        break;
         case Msg_Ret_Error:
              break;
         case Msg_Nop:
             break;
         default:
-            Show_Message("上位机接收未知指令");
+            Show_Message("上位机接收未知命令");
             break;
     }
 
@@ -554,7 +566,6 @@ void TcpClient::thread_start_find_device(QString ip)
     m_tcpSocket->abort();       //取消原有连接
     m_tcp_connect = false;
 
-
     m_tcpSocket->connectToHost(ip, IP_PORT);
 }
 
@@ -680,6 +691,16 @@ void TcpClient::thread_motor_reset(int channel)
     Tcp_Send_Cmd(Msg_Motor_Reset, buff, 4);
 }
 
+void TcpClient::thread_motor_clearAlarmCode(int channel)
+{
+    quint8 buff[100];
+
+    memcpy((void *)(buff), (void *)(&channel), 4);
+
+    Show_Message(QString("Tcp清除电机故障代码"));
+    Tcp_Send_Cmd(Msg_Clear_AlarmCode, buff, 4);
+}
+
 
 void TcpClient::thread_get_liquid_sensor()
 {
@@ -696,16 +717,17 @@ void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, 
     memcpy((void *)(buff+12), (void *)(&step), 4);
     memcpy((void *)(buff+16), (void *)(&time), 4);
 
-    Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 20);
+    Tcp_Send_Cmd(Msg_Lituit_Auto_Ctrl, buff, 20);
 }
 
 void TcpClient::thread_dlp_current_set(int light_type, int current1, int current2)
 {
     quint8 buff[100];
 
-    memcpy((void *)(buff), (void *)(&light_type), 4);
-    memcpy((void *)(buff+4), (void *)(&current1), 4);
-    memcpy((void *)(buff+8), (void *)(&current2), 4);
+
+    memcpy((void *)(buff), (void *)(&current1), 4);
+    memcpy((void *)(buff+4), (void *)(&current2), 4);
+    memcpy((void *)(buff+8), (void *)(&light_type), 4);
 
     Tcp_Send_Cmd(Msg_Set_DLP_Para, buff, 12);
 }

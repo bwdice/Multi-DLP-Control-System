@@ -8,7 +8,8 @@
 #include <QCameraViewfinder>
 #include <QCameraImageCapture>
 #include <QCloseEvent>
-
+#include <QScreen>
+#include <QToolButton>
 #pragma execution_character_set("utf-8")
 
 
@@ -16,13 +17,15 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
+
+
     ui->setupUi(this);
     ui->textEdit_message->clear();
 
-    ui->lineEdit_IP_addr->setText("192.168.0.5");
+    ui->lineEdit_IP_addr->setText("192.168.1.220");
 
-    ui->tabWidget->setTabText(2, "调试设备");
-    
+    ui->tabWidget->setTabText(2, "调试");
     ui->tabWidget->setTabText(1, "参数配置");
     ui->tabWidget->setTabText(0, "模型打印");
     ui->tabWidget->setCurrentIndex(0);
@@ -36,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_model_rate->setText("100");
 
     ui->comboBox_knife_mode->setStyleSheet("QComboBox{color:rgb(255,0,0);}");
+    ui->comboBox_dlp_light_type->setStyleSheet("QComboBox{color:rgb(255,0,0);}");
 
     //setting
     ui->lineEdit_led_current->setText("80");
@@ -92,7 +96,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     //show image
-    m_show_image = new QImage(1920,1080,QImage::Format_RGB888);
+    //m_show_image = new QImage(1920,1080,QImage::Format_RGB888);
+    m_show_image = new QImage(400,300,QImage::Format_RGB888);
     m_show_image->fill(QColor(Qt::black));
     ui->label_show_pic->setPixmap(QPixmap::fromImage(*m_show_image));
 
@@ -180,12 +185,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( this, SIGNAL(main_stop_test()), tcpClient, SLOT(thread_stop_test()) );
     connect( this, SIGNAL(main_motor_ctrl(int, int, int)), tcpClient, SLOT(thread_motor_ctrl(int, int, int)) );
     connect( this, SIGNAL(main_motor_reset(int)), tcpClient, SLOT(thread_motor_reset(int)) );
+    connect( this, SIGNAL(main_motor_clearAlarmCode(int)), tcpClient, SLOT(thread_motor_clearAlarmCode(int)) );
     connect( this, SIGNAL(main_get_liquid_sensor()), tcpClient, SLOT(thread_get_liquid_sensor()) );
     connect( this, SIGNAL(main_set_liquit_auto_ctrl(int, int, int, int, int)), tcpClient, SLOT(thread_set_liquit_auto_ctrl(int, int, int, int, int)) );
     connect( this, SIGNAL(main_dlp_current_set(int, int, int)), tcpClient, SLOT(thread_dlp_current_set(int, int, int)) );
     connect( tcpClient, SIGNAL(thread_get_system_para(SYS_PARA)), this, SLOT(main_get_system_para(SYS_PARA)));
     connect( tcpClient, SIGNAL(thread_liquid_sensor_ret(int, int)), this, SLOT(main_liquid_sensor_ret(int, int)));
     connect( tcpClient, SIGNAL(thread_motor_reset_ret(int)), this, SLOT(main_motor_reset_ret(int)));
+    connect( tcpClient, SIGNAL(thread_motor_clearAlarmCode_ret(int)), this, SLOT(main_motor_clearAlarmCode_ret(int)));
     connect( tcpClient, SIGNAL(thread_liquid_sensor_ret(int)), this, SLOT(main_liquid_sensor_ret(int)));
     connect( this, SIGNAL(main_show_gray_pic(int)), tcpClient, SLOT(thread_show_gray_pic(int)) );
     connect( this, SIGNAL(main_get_version()), tcpClient, SLOT(thread_get_version()) );
@@ -199,7 +206,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( this, SIGNAL(main_delete_slc_file(QString)), tcpClient, SLOT(thread_delete_slc_file(QString)) );
     connect( tcpClient, SIGNAL(thread_software_version(QString)), this, SLOT(main_software_version(QString)));
     connect( tcpClient, SIGNAL(thread_printing_image(PRINTING_IMAGE)), this, SLOT(main_printing_image(PRINTING_IMAGE)));
-
+    connect( tcpClient, SIGNAL(thread_get_motorinfor(unsigned char*, unsigned int)), this, SLOT(main_get_motorinfor(unsigned char*, unsigned int)));
+  
 
     //start
     thread->start();
@@ -228,6 +236,8 @@ MainWindow::MainWindow(QWidget *parent) :
     imageCapture = new QCameraImageCapture(camera);
 
     camera->start();
+
+    AutoZoomButtonSize();
 }
 
 MainWindow::~MainWindow()
@@ -261,7 +271,7 @@ void MainWindow::closeEvent( QCloseEvent * event )
 
 void MainWindow::timerEvent(QTimerEvent* ev)
 {
-    //定时事件
+    //锟斤拷时锟铰硷拷
     if(ev->timerId() == timer_id1)
     {
         int hour,min,sec;
@@ -316,6 +326,11 @@ void MainWindow::timerEvent(QTimerEvent* ev)
             killTimer(timer_id2);
         }
     }
+    else if(ev->timerId() == timer_id4)
+    {
+        qDebug()<<"timer4";
+       on_btn_get_liquid_sensor_clicked();
+    }
 }
 
 
@@ -328,9 +343,11 @@ void MainWindow::Show_Message(QString str)
 
 void MainWindow::on_btn_find_device_clicked()
 {
-    QString ip = ui->lineEdit_IP_addr->text();
-    m_tcp_connect = false;
-    emit main_start_find_device(ip);
+
+        QString ip = ui->lineEdit_IP_addr->text();
+        m_tcp_connect = false;
+        emit main_start_find_device(ip);
+
 }
 
 
@@ -808,6 +825,12 @@ void MainWindow::main_motor_reset_ret(int channel)
     Show_Message(str);
 }
 
+void MainWindow::main_motor_clearAlarmCode_ret(int channel)
+{
+    QString str;
+    str = QString("电机 %1 复位完成！").arg(channel+1);
+    Show_Message(str);
+}
 
 void MainWindow::main_send_file_persent(int persent)
 {
@@ -882,13 +905,92 @@ void MainWindow::main_printing_image(PRINTING_IMAGE image_data)
     Show_Message(QString("width:%1, height:%2").arg(width).arg(height));
 
     QImage image(width, height, QImage::Format_Mono);
-    uchar* pLine = image.scanLine(0); //获取图像数据指针基地址
+    uchar* pLine = image.scanLine(0); //锟斤拷取图锟斤拷锟斤拷锟斤拷指锟斤拷锟斤拷锟斤拷址
     memcpy(pLine, image_data.buff, width * height/8);
 
     QRect rect = ui->label_show_pic->rect();
     image = image.scaled(rect.width(), rect.height());
     ui->label_show_pic->setPixmap(QPixmap::fromImage(image));
 }
+
+
+// 得到电机数据
+void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
+{
+    memcpy(motor_paradata[0].motorinfo_buf,pt,44);
+    memcpy(motor_paradata[1].motorinfo_buf,&pt[44],44);
+    memcpy(motor_paradata[2].motorinfo_buf,&pt[88],44);
+    qDebug()<<"status:"<<motor_paradata[0].motorinfo.status;
+    QString tmp;
+    tmp = uncharToQstring(pt, len);
+    qDebug()<<"motoinfo:"<<tmp;
+
+    // 状态
+    tmp = QString::number(motor_paradata[0].motorinfo.status, 16).toUpper(); // 
+    ui->lineEdit_state_Z_status->setText(tmp);
+
+    tmp = QString::number(motor_paradata[1].motorinfo.status, 16).toUpper(); // 
+    ui->lineEdit_state_knife_status->setText(tmp);
+
+    tmp = QString::number(motor_paradata[2].motorinfo.status, 16).toUpper(); // 
+    ui->lineEdit_state_liqut__status->setText(tmp);
+
+    // 当前位置 
+    ui->lineEdit_state_Z_pos->setText(QString::number(motor_paradata[0].motorinfo.pos));
+    ui->lineEdit_state_knife_pos->setText(QString::number(motor_paradata[1].motorinfo.pos));
+    ui->lineEdit_state_liqut_pos->setText(QString::number(motor_paradata[2].motorinfo.pos));
+
+    // 当前速度
+    ui->lineEdit_state_Z_speed->setText(QString::number(motor_paradata[0].motorinfo.speed));
+    ui->lineEdit_state_knife_speed->setText(QString::number(motor_paradata[1].motorinfo.speed));
+    ui->lineEdit_state_liqut__speed->setText(QString::number(motor_paradata[2].motorinfo.speed));
+    //报警代码
+    tmp = QString::number(motor_paradata[0].motorinfo.alalrmcode, 16).toUpper(); // 
+    ui->lineEdit_state_Z_alarmcode->setText(tmp);
+
+    tmp = QString::number(motor_paradata[1].motorinfo.alalrmcode, 16).toUpper(); // 
+    ui->lineEdit_state_knife_alarmcode->setText(tmp);
+
+    tmp = QString::number(motor_paradata[2].motorinfo.alalrmcode, 16).toUpper(); // 
+    ui->lineEdit_state_liqut__alarmcode->setText(tmp);
+
+    // 连接状态
+    if(motor_paradata[0].motorinfo.connectfailcnt == 0)
+    {
+        ui->lineEdit_state_Z_connectsate->setStyleSheet("color: blue;");
+        ui->lineEdit_state_Z_connectsate->setText("电机已连接");
+    }
+    else
+    {
+        ui->lineEdit_state_Z_connectsate->setStyleSheet("color: red;");
+        ui->lineEdit_state_Z_connectsate->setText("电机未连接");
+    }
+
+    if(motor_paradata[1].motorinfo.connectflag != 0)
+    {
+        ui->lineEdit_state_knife_connectsate->setStyleSheet("color: blue;");
+        ui->lineEdit_state_knife_connectsate->setText("电机已连接");
+    }
+    else
+    {
+        ui->lineEdit_state_knife_connectsate->setStyleSheet("color: red;");
+        ui->lineEdit_state_knife_connectsate->setText("电机未连接");
+    }
+
+    if(motor_paradata[2].motorinfo.connectflag != 0)
+    {
+        ui->lineEdit_state_liqut_connectsate->setStyleSheet("color: blue;");
+        ui->lineEdit_state_liqut_connectsate->setText("电机已连接");
+    }
+    else
+    {
+        ui->lineEdit_state_liqut_connectsate->setStyleSheet("color: red;");
+        ui->lineEdit_state_liqut_connectsate->setText("电机未连接");
+    }
+
+
+}
+
 
 
 //*****************************************************************************************************************
@@ -1250,12 +1352,12 @@ void MainWindow::on_btn_motor_para_set_3_clicked()
 
 void MainWindow::on_btn_z_calc_clicked()
 {
-    // 自动计算Z轴的步长，根据层厚
-    int kinessdata = ui->lineEdit_thinkness->text().toInt();  // 层厚
-    int m_z_distance  = ui->lineEdit_motor_z_distance->text().toInt(); // 获取距离
-    int m_z_step = ui->lineEdit_motor_step->text().toInt(); // 获取执行步长
+    //
+    int kinessdata = ui->lineEdit_thinkness->text().toInt();  //
+    int m_z_distance  = ui->lineEdit_motor_z_distance->text().toInt(); //
+    int m_z_step = ui->lineEdit_motor_step->text().toInt(); //
     float tmp;
-     // 距离/步长
+     //
     tmp = (float)m_z_distance / m_z_step;
     qDebug()<<"1step="<<tmp<<" mm";
 
@@ -1265,4 +1367,150 @@ void MainWindow::on_btn_z_calc_clicked()
 
 }
 
+
+
+void MainWindow::on_checkBox_priodreadliquitpos_clicked(bool checked)
+{
+    // 定时读取液位
+    int tmp = ui->lineEdit_priod_readLuid->text().toInt();
+    if(checked)
+    {
+          if(tmp < 1) tmp = 1;
+          qDebug()<<"定时时间："<<tmp;
+          timer_id4 = startTimer(tmp * 1000);
+    }
+    else
+    {
+
+        killTimer(timer_id4);
+    }
+}
+
+
+/**************************************************
+作者: DS小龙哥
+环境: win10 QT5.12.6 VS2017 32位 Release
+功能: 自适应工具栏按钮大小
+**************************************************/
+void MainWindow::AutoZoomButtonSize()
+{
+    //获取屏幕属性
+    QScreen *screen = QGuiApplication::primaryScreen();
+
+    //获取屏幕的分辨率
+    int lcd_width = screen->size().width();
+    int lcd_height = screen->size().height();
+    qDebug() << "当前系统分辨率:" << screen->size();
+
+    //计算横向纵向坐标的伸缩系统
+    double factorx = lcd_width / 1920.0;  //1920 是开发电脑界面的分辨率
+    double factory = lcd_height / 1080.0;
+
+    //QList<QWidget*> widgets = this->findChildren<QWidget*>();
+
+    //获取界面上所有的按钮
+    QList<QToolButton*> buttonList = this->findChildren<QToolButton*>();
+
+    //设置按钮大小
+    for (int i = 0; i < buttonList.count(); i++)
+    {
+        qDebug() << "buttonList:" << buttonList.at(i)->objectName();
+        ResetButtonGeometry(buttonList.at(i), factorx, factory);
+    }
+
+#if 0
+    //设置工具栏的最大高度
+    int ToolFrame_MaxH= lcd_height / 1080.0 * 40;
+    qDebug() << "原工具栏的高度:" << ui.ToolFrame->height();
+    qDebug() << "现工具栏的高度:" << ToolFrame_MaxH;
+    ui.ToolFrame->setMaximumHeight(ToolFrame_MaxH);
+    ui.ToolFrame->setMinimumHeight(ToolFrame_MaxH);
+#endif
+}
+
+
+//重设按钮分辨率
+void MainWindow::ResetButtonGeometry(QWidget *widget, double factorx, double factory)
+{
+    int oldX = widget->x();
+    int oldY = widget->y();
+    int oldW = widget->width();
+    int oldH = widget->height();
+    qDebug() << "widget->geometry()1:" << widget->geometry();
+    widget->move(oldX*factorx, oldY*factory);
+    widget->resize(oldW*factorx, oldH*factory);
+    widget->setMaximumSize(oldW*factorx, oldH*factory);
+    widget->setMinimumSize(oldW*factorx, oldH*factory);
+    qDebug() << "widget->geometry()2:" << widget->geometry();
+}
+
+void MainWindow::on_Btn_ClearLog_clicked()
+{
+    ui->textEdit_message->setText("");
+}
+
+void MainWindow::on_btn_Z_clearalarmcode_clicked()
+{
+    // 
+    int channel = 0;
+    Show_Message("Z电机释放使能");
+     emit main_motor_clearAlarmCode(channel);
+}
+
+void MainWindow::on_btn_knife_clearalarmcode_clicked()
+{
+    // 
+    int channel = 1;
+    Show_Message("刮刀电机释放使能");
+     emit main_motor_clearAlarmCode(channel);
+}
+
+void MainWindow::on_btn_liqut_clearalarmcode_clicked()
+{
+    // 
+    int channel = 2;
+    Show_Message("液位释放使能");
+     emit main_motor_clearAlarmCode(channel);
+}
+
+
+
+
+void MainWindow::on_horizontalSlider_led_current_valueChanged(int value)
+{
+    ui->lineEdit_led_current->setText(QString("%1").arg(value));
+
+}
+
+void MainWindow::on_lineEdit_led_current_textChanged(const QString &arg1)
+{
+    ui->horizontalSlider_led_current->setValue(arg1.toInt());
+
+}
+
+void MainWindow::on_horizontalSlider_led2_current_valueChanged(int value)
+{
+    ui->lineEdit_led2_current->setText(QString("%1").arg(value));
+}
+
+void MainWindow::on_lineEdit_led2_current_textChanged(const QString &arg1)
+{
+    ui->horizontalSlider_led2_current->setValue(arg1.toInt());
+}
+
+
+QString uncharToQstring(unsigned char * id,int len)
+{
+    QString temp,msg;
+    int j = 0;
+
+    while (j<len)
+    {
+        temp = QString(" %1").arg((int)id[j], 2, 16, QLatin1Char('0'));
+        msg.append(temp);
+        j++;
+    }
+
+    return msg;
+}
 
