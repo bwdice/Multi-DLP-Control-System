@@ -1,4 +1,4 @@
-#ifndef TCPCLIENT_H
+﻿#ifndef TCPCLIENT_H
 #define TCPCLIENT_H
 
 #include <stdio.h>
@@ -115,6 +115,8 @@ typedef struct DLP_PARA_t
     quint32 				dlp1_current;			// dlp1电流
     quint32 				dlp2_current;			// dlp2电流
     quint32 				light_source_type;		// 光源类型
+    unsigned char           dlp1_powerstate;        // DLP1电源状态
+    unsigned char           dlp2_powerstate;        // DLP2电源状态
 }DLP_PARA;
 
 

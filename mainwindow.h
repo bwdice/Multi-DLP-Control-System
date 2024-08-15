@@ -71,6 +71,9 @@ public:
     //dlp
     bool                m_dlp_power_on_off;
     int                 m_dlp_power_on_time_cnt;
+    unsigned char dlp1_powerstate;
+    unsigned char dlp2_powerstate;
+    
 
     //File
     QFile               *m_localFile;     // 要发送的文件
@@ -106,7 +109,7 @@ public:
 public:
    void AutoZoomButtonSize();
    void ResetButtonGeometry(QWidget *widget, double factorx, double factory);
-
+   void main_poweroff_buttonenb(bool enb1,bool enb2);
 private slots:
     void on_btn_find_device_clicked();
     void on_btn_download_file_clicked();

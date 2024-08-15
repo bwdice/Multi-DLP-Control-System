@@ -373,6 +373,49 @@ void TcpClient::Tcp_System_Para_Process()
     memcpy(&para.dlp.light_source_type, m_pTcpRecvFrame->pack_data+index, 4);
     index += 4;
 
+    para.dlp.dlp1_powerstate = m_pTcpRecvFrame->pack_data[index++];
+    para.dlp.dlp2_powerstate = m_pTcpRecvFrame->pack_data[index++];
+
+    #if 0
+    if(para.dlp.dlp1_powerstate == 0x01)
+    {
+       Show_Message(QString("DLP1 已开机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x02)
+    {
+       Show_Message(QString("DLP1 已待机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x04)
+    {
+       Show_Message(QString("DLP1 正在开机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x08)
+    {
+       Show_Message(QString("DLP1 正在待机"));
+    }
+    
+    if(para.dlp.dlp2_powerstate == 0x01)
+    {
+       Show_Message(QString("DLP2 已开机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x02)
+    {
+       Show_Message(QString("DLP2 已待机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x04)
+    {
+       Show_Message(QString("DLP2 正在开机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x08)
+    {
+       Show_Message(QString("DLP2 正在待机"));
+    }
+
+    #endif
+
+    
+    
+
     emit thread_get_system_para(para);
     Show_Message(QString("接收到系统参数"));
 }

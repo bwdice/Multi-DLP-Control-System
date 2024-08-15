@@ -25,10 +25,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->lineEdit_IP_addr->setText("192.168.1.220");
 
-    ui->tabWidget->setTabText(2, "调试");
-    ui->tabWidget->setTabText(1, "参数配置");
-    ui->tabWidget->setTabText(0, "模型打印");
-    ui->tabWidget->setCurrentIndex(0);
+    ui->devicecontrl->setTabText(2, "调试光机");
+    ui->devicecontrl->setTabText(1, "参数配置");
+    ui->devicecontrl->setTabText(0, "模型打印");
+    ui->devicecontrl->setCurrentIndex(0);
 
     //ui
     ui->lineEdit_thinkness->setText("0");
@@ -117,6 +117,11 @@ MainWindow::MainWindow(QWidget *parent) :
     //connect pixel
     ui->lineEdit_connect_pixel->setText("10");
 
+
+
+    dlp1_powerstate = 0;
+    dlp2_powerstate = 0;
+    
     //tcp
     m_tcp_connect = false;
 
@@ -784,6 +789,43 @@ void MainWindow::main_get_system_para(SYS_PARA sys_para)
         ui->lineEdit_led2_current->setText(QString("%1").arg((double)sys_para.dlp.dlp2_current/10.0));
     }
 
+    #if 0
+    if(para.dlp.dlp1_powerstate == 0x01)
+    {
+       Show_Message(QString("DLP1 已开机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x02)
+    {
+       Show_Message(QString("DLP1 已待机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x04)
+    {
+       Show_Message(QString("DLP1 正在开机"));
+    }
+    else if(para.dlp.dlp1_powerstate == 0x08)
+    {
+       Show_Message(QString("DLP1 正在待机"));
+    }
+    
+    if(para.dlp.dlp2_powerstate == 0x01)
+    {
+       Show_Message(QString("DLP2 已开机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x02)
+    {
+       Show_Message(QString("DLP2 已待机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x04)
+    {
+       Show_Message(QString("DLP2 正在开机"));
+    }
+    else if(para.dlp.dlp2_powerstate == 0x08)
+    {
+       Show_Message(QString("DLP2 正在待机"));
+    }
+
+    #endif 
+
 
 
     //para
@@ -913,13 +955,79 @@ void MainWindow::main_printing_image(PRINTING_IMAGE image_data)
     ui->label_show_pic->setPixmap(QPixmap::fromImage(image));
 }
 
+void MainWindow::main_poweroff_buttonenb(bool enb1,bool enb2)
+{
+    ui->btn_dlp_power_on_off->setEnabled(enb1);
+    ui->btn_dlp_power_off->setEnabled(enb2);
+}
+
 
 // 得到电机数据
 void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
 {
+   
     memcpy(motor_paradata[0].motorinfo_buf,pt,44);
     memcpy(motor_paradata[1].motorinfo_buf,&pt[44],44);
     memcpy(motor_paradata[2].motorinfo_buf,&pt[88],44);
+    dlp1_powerstate = pt[132];
+    dlp2_powerstate = pt[133];
+
+
+    if(dlp1_powerstate == 0x01)
+    {
+       ui->lineEdit_DLP1_POWERSTATE->setText("已开机");
+       main_poweroff_buttonenb(false,true);
+       if(m_dlp_power_on_off != true)
+       {
+          ui->progressBar_dlp_power_on->setValue(100);
+          m_dlp_power_on_off = true;
+          m_dlp_power_on_time_cnt = 0;
+          killTimer(timer_id2);
+       }
+    }
+    else if(dlp1_powerstate == 0x02)
+    {
+       ui->lineEdit_DLP1_POWERSTATE->setText("已待机");
+       main_poweroff_buttonenb(true,false);
+       if(m_dlp_power_on_off != false)
+       {
+          ui->progressBar_dlp_power_on->setValue(0);
+          m_dlp_power_on_off = false;
+          m_dlp_power_on_time_cnt = 0;
+          killTimer(timer_id2);
+       }
+    }
+    else if(dlp1_powerstate == 0x04)
+    {
+       ui->lineEdit_DLP1_POWERSTATE->setText("正在开机中,请稍候");
+       main_poweroff_buttonenb(false,false);
+    }
+    else if(dlp1_powerstate == 0x08)
+    {
+       ui->lineEdit_DLP1_POWERSTATE->setText("正在待机中,请稍候");
+       main_poweroff_buttonenb(false,false);
+    }
+    
+    if(dlp2_powerstate == 0x01)
+    {
+       ui->lineEdit_DLP2_POWERSTATE->setText("已开机");
+      
+    }
+    else if(dlp2_powerstate == 0x02)
+    {
+       ui->lineEdit_DLP2_POWERSTATE->setText("已待机");
+    }
+    else if(dlp2_powerstate == 0x04)
+    {
+       ui->lineEdit_DLP2_POWERSTATE->setText("正在开机中,请稍候");
+    }
+    else if(dlp2_powerstate == 0x08)
+    {
+       ui->lineEdit_DLP2_POWERSTATE->setText("正在待机中,请稍候");
+    }
+
+
+    
     qDebug()<<"status:"<<motor_paradata[0].motorinfo.status;
     QString tmp;
     tmp = uncharToQstring(pt, len);
@@ -1279,7 +1387,9 @@ void MainWindow::on_btn_print_motor_para_clicked()
 
 void MainWindow::on_btn_dlp_power_on_off_clicked()
 {
-    if(m_dlp_power_on_time_cnt != 0)
+   if(m_tcp_connect == false ) return;
+   
+    if(m_dlp_power_on_time_cnt > 0)
     {
         return;
     }
@@ -1293,6 +1403,8 @@ void MainWindow::on_btn_dlp_power_on_off_clicked()
 
 void MainWindow::on_btn_dlp_power_off_clicked()
 {
+    if(m_tcp_connect == false ) return;
+    
     if(m_dlp_power_on_time_cnt != 0)
     {
         return;
