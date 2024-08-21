@@ -192,7 +192,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( this, SIGNAL(main_motor_reset(int)), tcpClient, SLOT(thread_motor_reset(int)) );
     connect( this, SIGNAL(main_motor_clearAlarmCode(int)), tcpClient, SLOT(thread_motor_clearAlarmCode(int)) );
     connect( this, SIGNAL(main_get_liquid_sensor()), tcpClient, SLOT(thread_get_liquid_sensor()) );
-    connect( this, SIGNAL(main_set_liquit_auto_ctrl(int, int, int, int, int)), tcpClient, SLOT(thread_set_liquit_auto_ctrl(int, int, int, int, int)) );
+    connect( this, SIGNAL(main_set_liquit_auto_ctrl(int, int, int, int, int,int)), tcpClient, SLOT(thread_set_liquit_auto_ctrl(int, int, int, int, int,int)) );
     connect( this, SIGNAL(main_dlp_current_set(int, int, int)), tcpClient, SLOT(thread_dlp_current_set(int, int, int)) );
     connect( tcpClient, SIGNAL(thread_get_system_para(SYS_PARA)), this, SLOT(main_get_system_para(SYS_PARA)));
     connect( tcpClient, SIGNAL(thread_liquid_sensor_ret(int, int)), this, SLOT(main_liquid_sensor_ret(int, int)));
@@ -308,7 +308,7 @@ void MainWindow::timerEvent(QTimerEvent* ev)
     }
     else if(ev->timerId() == timer_id2)
     {
-        m_dlp_power_on_time_cnt ++;
+        m_dlp_power_on_time_cnt++;
         if(!m_dlp_power_on_off)
         {
             ui->progressBar_dlp_power_on->setValue(m_dlp_power_on_time_cnt);
@@ -538,6 +538,8 @@ void MainWindow::on_btn_start_print_clicked()
         return;
     }
 
+    ui->btn_stop_print->setEnabled(true);
+    ui->btn_start_print->setEnabled(false);
 
     emit main_start_print();
     Show_Message("开始控制设备打印 ......");
@@ -553,6 +555,9 @@ void MainWindow::on_btn_stop_print_clicked()
         emit main_stop_print();
         Show_Message("控制设备停止打印 ......");
     }
+    ui->btn_stop_print->setEnabled(true);
+    ui->btn_start_print->setEnabled(true);
+    
 }
 
 
@@ -774,8 +779,10 @@ void MainWindow::main_get_system_para(SYS_PARA sys_para)
     ui->lineEdit_liquit_ctrl_posit->setText(QString("%1").arg((double)sys_para.liquit_ctrl.posit/1000));
     ui->lineEdit_liquit_ctrl_range->setText(QString("%1").arg((double)sys_para.liquit_ctrl.range/1000));
     ui->lineEdit_liquit_ctrl_step->setText(QString("%1").arg(sys_para.liquit_ctrl.step));
-    ui->lineEdit_liquit_ctrl_time->setText(QString("%1").arg((double)sys_para.liquit_ctrl.time/1000));
-
+    ui->lineEdit_liquit_ctrl_time->setText(QString("%1").arg((double)sys_para.liquit_ctrl.time/1000)); 
+    ui->lineEdit_liquit_max_disance->setText(QString("%1").arg((double)sys_para.liquit_ctrl.maxdis/1000));
+    
+    
     if(sys_para.dlp.light_source_type == 0)
     {
         ui->comboBox_dlp_light_type->setCurrentIndex(0);
@@ -1028,19 +1035,71 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
 
 
     
-    qDebug()<<"status:"<<motor_paradata[0].motorinfo.status;
+    //qDebug()<<"status:"<<motor_paradata[0].motorinfo.status;
     QString tmp;
-    tmp = uncharToQstring(pt, len);
-    qDebug()<<"motoinfo:"<<tmp;
+    //tmp = uncharToQstring(pt, len);
+    //qDebug()<<"motoinfo:"<<tmp;
 
     // 状态
-    tmp = QString::number(motor_paradata[0].motorinfo.status, 16).toUpper(); // 
+    tmp = "";
+    if(motor_paradata[0].motorinfo.status & CW_STATUS)
+    {
+       tmp += " CW";
+    }
+    if(motor_paradata[0].motorinfo.status & CCW_STATUS)
+    {
+       tmp += " CCW";
+    }
+    if(motor_paradata[0].motorinfo.status & RUNNING_STATUS)
+    {
+       tmp += " RUN";
+    }
+    else
+    {
+       tmp += " IDLE";
+    }
+    
+   // tmp = QString::number(motor_paradata[0].motorinfo.status, 16).toUpper(); // 
     ui->lineEdit_state_Z_status->setText(tmp);
 
-    tmp = QString::number(motor_paradata[1].motorinfo.status, 16).toUpper(); // 
+    tmp = "";
+    if(motor_paradata[1].motorinfo.status & CW_STATUS)
+    {
+       tmp += " CW";
+    }
+    if(motor_paradata[1].motorinfo.status & CCW_STATUS)
+    {
+       tmp += " CCW";
+    }
+    if(motor_paradata[1].motorinfo.status & RUNNING_STATUS)
+    {
+       tmp += " RUN";
+    }
+    else
+    {
+       tmp += " IDLE";
+    }
+    //tmp = QString::number(motor_paradata[1].motorinfo.status, 16).toUpper(); // 
     ui->lineEdit_state_knife_status->setText(tmp);
 
-    tmp = QString::number(motor_paradata[2].motorinfo.status, 16).toUpper(); // 
+    tmp = "";
+    if(motor_paradata[2].motorinfo.status & CW_STATUS)
+    {
+       tmp += " CW";
+    }
+    if(motor_paradata[2].motorinfo.status & CCW_STATUS)
+    {
+       tmp += " CCW";
+    }
+    if(motor_paradata[2].motorinfo.status & RUNNING_STATUS)
+    {
+       tmp += " RUN";
+    }
+    else
+    {
+       tmp += " IDLE";
+    }
+    //tmp = QString::number(motor_paradata[2].motorinfo.status, 16).toUpper(); // 
     ui->lineEdit_state_liqut__status->setText(tmp);
 
     // 当前位置 
@@ -1327,14 +1386,15 @@ void MainWindow::on_btn_set_liquit_ctrl_clicked()
     int is_check = 0;
     if(ui->checkBox_liquit_ctrl_en->isChecked())
     {
-        is_check = 1;
+        is_check=1;
     }
     int posit = (int)(ui->lineEdit_liquit_ctrl_posit->text().toDouble()*1000);
     int range = (int)(ui->lineEdit_liquit_ctrl_range->text().toDouble()*1000);
     int step = ui->lineEdit_liquit_ctrl_step->text().toInt();
     int time = (int)(ui->lineEdit_liquit_ctrl_time->text().toDouble()*1000);
-
-    emit main_set_liquit_auto_ctrl(is_check, posit, range, step, time);
+    int maxdisance = (int)(ui->lineEdit_liquit_max_disance->text().toDouble()*1000);
+    
+    emit main_set_liquit_auto_ctrl(is_check, posit, range, step, time,maxdisance);
 }
 
 
@@ -1387,6 +1447,7 @@ void MainWindow::on_btn_print_motor_para_clicked()
 
 void MainWindow::on_btn_dlp_power_on_off_clicked()
 {
+   // 开机
    if(m_tcp_connect == false ) return;
    
     if(m_dlp_power_on_time_cnt > 0)
@@ -1403,6 +1464,7 @@ void MainWindow::on_btn_dlp_power_on_off_clicked()
 
 void MainWindow::on_btn_dlp_power_off_clicked()
 {
+    // 关机
     if(m_tcp_connect == false ) return;
     
     if(m_dlp_power_on_time_cnt != 0)

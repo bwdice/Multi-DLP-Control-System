@@ -10,6 +10,14 @@
 #include <QImage>
 
 
+
+// 电机状态
+#define CCW_STATUS  0x8000   // CCW 状态
+#define CW_STATUS   0x4000   // CW状态
+#define RUNNING_STATUS 0x200 // 运行标志
+
+
+
 #pragma pack(push)
 #pragma pack(1)
 
@@ -225,7 +233,7 @@ signals:
     void main_set_motor_para(int, int, int, int, int, int, int, int, int, int);
     void main_open_slc_file(QString);
     void main_delete_slc_file(QString);
-    void main_set_liquit_auto_ctrl(int, int, int, int, int);
+    void main_set_liquit_auto_ctrl(int, int, int, int, int,int);
     void main_motor_clearAlarmCode(int);
 
 private:

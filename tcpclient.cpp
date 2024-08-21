@@ -363,6 +363,8 @@ void TcpClient::Tcp_System_Para_Process()
     index += 4;
     memcpy(&para.liquit_ctrl.time, m_pTcpRecvFrame->pack_data+index, 4);
     index += 4;
+    memcpy(&para.liquit_ctrl.maxdis, m_pTcpRecvFrame->pack_data+index, 4);
+    index += 4;
 
 
 
@@ -750,7 +752,7 @@ void TcpClient::thread_get_liquid_sensor()
     Tcp_Send_Cmd(Msg_Get_Liquid_Sensor_Data, nullptr, 0);
 }
 
-void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time)
+void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time,int maxdis)
 {
     quint8 buff[100];
 
@@ -759,8 +761,9 @@ void TcpClient::thread_set_liquit_auto_ctrl(int is_check, int posit, int range, 
     memcpy((void *)(buff+8), (void *)(&range), 4);
     memcpy((void *)(buff+12), (void *)(&step), 4);
     memcpy((void *)(buff+16), (void *)(&time), 4);
-
-    Tcp_Send_Cmd(Msg_Lituit_Auto_Ctrl, buff, 20);
+    memcpy((void *)(buff+20), (void *)(&maxdis), 4);
+    qDebug("设置自动液位参数");
+    Tcp_Send_Cmd(Msg_Lituit_Auto_Ctrl, buff, 24);
 }
 
 void TcpClient::thread_dlp_current_set(int light_type, int current1, int current2)

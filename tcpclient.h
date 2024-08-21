@@ -127,6 +127,7 @@ typedef struct LIQUIT_AUTO_CTRL_t
     quint32                 range;                  // 自动控制范围
     quint32                 step;                   // 电机步长
     quint32                 time;                   // 自动控制时间间隔
+    quint32                 maxdis;                 // 液位量程
 }LIQUIT_AUTO_CTRL;
 
 Q_DECLARE_METATYPE(LIQUIT_AUTO_CTRL)
@@ -247,7 +248,7 @@ public slots:
     void thread_set_motor_para(int index, int current, int subdivision, int start_speed, int speed_up_time, int speed_down_time, int max_speed, int return_speed, int speed_after_zero, int return_up_down_time);
     void thread_open_slc_file(QString filename);
     void thread_delete_slc_file(QString filename);
-    void thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time);
+    void thread_set_liquit_auto_ctrl(int is_check, int posit, int range, int step, int time,int maxdis);
 
 private:
     //public
