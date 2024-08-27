@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->textEdit_message->clear();
 
-    ui->lineEdit_IP_addr->setText("192.168.1.220");
+    ui->lineEdit_IP_addr->setText("192.168.0.5");
 
     ui->devicecontrl->setTabText(2, "调试光机");
     ui->devicecontrl->setTabText(1, "参数配置");
@@ -118,6 +118,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_connect_pixel->setText("10");
 
 
+    allmotor_normal = false;
+    ui->ui_device_status->setStyleSheet("color: black;");
+        ui->ui_device_status->setText("空闲中！！！");
 
     dlp1_powerstate = 0;
     dlp2_powerstate = 0;
@@ -540,7 +543,8 @@ void MainWindow::on_btn_start_print_clicked()
 
     ui->btn_stop_print->setEnabled(true);
     ui->btn_start_print->setEnabled(false);
-
+    ui->ui_device_status->setStyleSheet("color: green;");
+    ui->ui_device_status->setText("正在打印中...");
     emit main_start_print();
     Show_Message("开始控制设备打印 ......");
 }
@@ -550,10 +554,12 @@ void MainWindow::on_btn_start_print_clicked()
 
 void MainWindow::on_btn_stop_print_clicked()
 {
-    if(m_device_printing)
+    //if(m_device_printing)
     {
         emit main_stop_print();
         Show_Message("控制设备停止打印 ......");
+        ui->ui_device_status->setStyleSheet("color: black;");
+        ui->ui_device_status->setText("打印已停止！！！");
     }
     ui->btn_stop_print->setEnabled(true);
     ui->btn_start_print->setEnabled(true);
@@ -568,6 +574,8 @@ void MainWindow::on_btn_pause_print_clicked()
     {
         emit main_pause_print();
         Show_Message("控制设备暂停打印 ......");
+        ui->ui_device_status->setStyleSheet("color: red;");
+        ui->ui_device_status->setText("打印已暂停...");
     }
 }
 
@@ -578,6 +586,8 @@ void MainWindow::on_btn_continue_print_clicked()
     {
         emit main_continue_print();
         Show_Message("控制设备继续打印 ......");
+        ui->ui_device_status->setStyleSheet("color: green;");
+        ui->ui_device_status->setText("正在打印中...");
     }
 }
 
@@ -1032,6 +1042,7 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
     {
        ui->lineEdit_DLP2_POWERSTATE->setText("正在待机中,请稍候");
     }
+    
 
 
     
@@ -1045,15 +1056,15 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
     if(motor_paradata[0].motorinfo.status & CW_STATUS)
     {
        tmp += " CW";
-    }
+    }
     if(motor_paradata[0].motorinfo.status & CCW_STATUS)
     {
        tmp += " CCW";
-    }
+    }
     if(motor_paradata[0].motorinfo.status & RUNNING_STATUS)
     {
        tmp += " RUN";
-    }
+    }
     else
     {
        tmp += " IDLE";
@@ -1066,15 +1077,15 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
     if(motor_paradata[1].motorinfo.status & CW_STATUS)
     {
        tmp += " CW";
-    }
+    }
     if(motor_paradata[1].motorinfo.status & CCW_STATUS)
     {
        tmp += " CCW";
-    }
+    }
     if(motor_paradata[1].motorinfo.status & RUNNING_STATUS)
     {
        tmp += " RUN";
-    }
+    }
     else
     {
        tmp += " IDLE";
@@ -1086,15 +1097,15 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
     if(motor_paradata[2].motorinfo.status & CW_STATUS)
     {
        tmp += " CW";
-    }
+    }
     if(motor_paradata[2].motorinfo.status & CCW_STATUS)
     {
        tmp += " CCW";
-    }
+    }
     if(motor_paradata[2].motorinfo.status & RUNNING_STATUS)
     {
        tmp += " RUN";
-    }
+    }
     else
     {
        tmp += " IDLE";
@@ -1133,7 +1144,7 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
         ui->lineEdit_state_Z_connectsate->setText("电机未连接");
     }
 
-    if(motor_paradata[1].motorinfo.connectflag != 0)
+    if(motor_paradata[1].motorinfo.connectfailcnt == 0)
     {
         ui->lineEdit_state_knife_connectsate->setStyleSheet("color: blue;");
         ui->lineEdit_state_knife_connectsate->setText("电机已连接");
@@ -1144,7 +1155,7 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
         ui->lineEdit_state_knife_connectsate->setText("电机未连接");
     }
 
-    if(motor_paradata[2].motorinfo.connectflag != 0)
+    if(motor_paradata[2].motorinfo.connectfailcnt == 0)
     {
         ui->lineEdit_state_liqut_connectsate->setStyleSheet("color: blue;");
         ui->lineEdit_state_liqut_connectsate->setText("电机已连接");
@@ -1153,6 +1164,25 @@ void MainWindow::main_get_motorinfor(unsigned char *pt,unsigned int len)
     {
         ui->lineEdit_state_liqut_connectsate->setStyleSheet("color: red;");
         ui->lineEdit_state_liqut_connectsate->setText("电机未连接");
+        
+    }
+
+    if(motor_paradata[0].motorinfo.connectfailcnt < 5 && motor_paradata[1].motorinfo.connectfailcnt < 5)
+    {
+        if(!allmotor_normal)
+        {
+           allmotor_normal = true;
+           
+        }
+        
+    }
+    else
+    {
+        if(allmotor_normal)
+        {
+           allmotor_normal = false;
+           on_btn_pause_print_clicked();
+        }
     }
 
 

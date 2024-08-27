@@ -2262,7 +2262,7 @@
                    </font>
                   </property>
                   <property name="title">
-                   <string>电机状态</string>
+                   <string>设备状态</string>
                   </property>
                   <widget class="QLabel" name="label_85">
                    <property name="geometry">
@@ -2275,6 +2275,31 @@
                    </property>
                    <property name="text">
                     <string/>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="ui_device_status">
+                   <property name="geometry">
+                    <rect>
+                     <x>20</x>
+                     <y>110</y>
+                     <width>321</width>
+                     <height>81</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>新宋体</family>
+                     <pointsize>24</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; color:#ff0000; vertical-align:sub;&quot;&gt;停止&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </widget>

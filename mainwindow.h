@@ -113,7 +113,7 @@ public:
     QImage              *m_show_image;
 
     uMotor_Info motor_paradata[3];  //电机数据
-
+    bool allmotor_normal;  // 所有电机是否正常标志
 public:
    void AutoZoomButtonSize();
    void ResetButtonGeometry(QWidget *widget, double factorx, double factory);
