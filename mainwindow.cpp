@@ -336,7 +336,7 @@ void MainWindow::timerEvent(QTimerEvent* ev)
     }
     else if(ev->timerId() == timer_id4)
     {
-        qDebug()<<"timer4";
+       // qDebug()<<"timer4";
        on_btn_get_liquid_sensor_clicked();
     }
 }
@@ -723,6 +723,12 @@ void MainWindow::main_print_finish()
     ui->label_print_leave_time->setText("Ô¤¼Æ´òÓ¡Ê£ÓàÊ±¼ä£º");
 
     ui->label_print_num->setText("´òÓ¡ÒÑÍê³É");
+    
+    ui->ui_device_status->setStyleSheet("color: black;");
+    ui->ui_device_status->setText("´òÓ¡ÒÑÍ£Ö¹£¡£¡£¡");
+
+    ui->btn_stop_print->setEnabled(true);
+    ui->btn_start_print->setEnabled(true);
 }
 
 void MainWindow::main_connect_pixel(int connect_pixel)
@@ -964,7 +970,7 @@ void MainWindow::main_printing_image(PRINTING_IMAGE image_data)
     Show_Message(QString("width:%1, height:%2").arg(width).arg(height));
 
     QImage image(width, height, QImage::Format_Mono);
-    uchar* pLine = image.scanLine(0); //ï¿½ï¿½È¡Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
+    uchar* pLine = image.scanLine(0); //
     memcpy(pLine, image_data.buff, width * height/8);
 
     QRect rect = ui->label_show_pic->rect();
